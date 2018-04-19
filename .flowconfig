@@ -1,0 +1,16 @@
+[version]
+0.70.0
+
+[ignore]
+.*/node_modules/.*
+.*/git/.*
+
+[options]
+emoji=true
+# https://flow.org/en/docs/config/options/#toc-experimental-const-params-boolean
+experimental.const_params=true
+esproposal.export_star_as=enable
+suppress_type=$FlowFixMe
+suppress_type=$FlowTODO
+module.name_mapper='^web\-components\/\(.*\)$' -> '<PROJECT_ROOT>/web/src/components/\1'
+module.name_mapper='^web\-containers\/\(.*\)$' -> '<PROJECT_ROOT>/web/src/containers/\1'
