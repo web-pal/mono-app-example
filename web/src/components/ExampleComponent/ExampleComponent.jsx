@@ -15,7 +15,7 @@ import {
 
 export type Props = {
   randomString: string,
-  generateRandomString: () => Action,
+  generateRandomString: () => Action | void,
 };
 
 const ExampleComponent = ({

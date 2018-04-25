@@ -32,6 +32,16 @@ module.exports = {
               '@babel/react',
               '@babel/flow',
             ],
+            plugins: [
+              [
+                'import',
+                {
+                  libraryName: 'antd',
+                  libraryDirectory: 'es',
+                  style: 'css',
+                },
+              ],
+            ],
             env: {
               development: {
                 plugins: [

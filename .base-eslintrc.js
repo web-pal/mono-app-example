@@ -3,6 +3,9 @@ module.exports = {
   parserOptions: {
     allowImportExportEverywhere: true,
   },
+  globals: {
+    fetch: true,
+  },
   extends: [
     'airbnb',
     'plugin:flowtype/recommended',
@@ -11,6 +14,7 @@ module.exports = {
     'flowtype',
   ],
   rules: {
+    'import/no-extraneous-dependencies': 'off',
     'import/prefer-default-export': 'off',
     'jsx-a11y/no-static-element-interactions': 'off',
     'jsx-a11y/click-events-have-key-events': 'off',
@@ -23,7 +27,9 @@ module.exports = {
     'object-curly-newline': [
       'error',
       {
-        ObjectExpression: 'always',
+        ObjectExpression: {
+          consistent: true,
+        },
         ObjectPattern: {
           multiline: true,
         },
