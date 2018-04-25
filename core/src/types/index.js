@@ -1,5 +1,4 @@
 // @flow
-
 import type {
   Store as ReduxStore,
   Dispatch as ReduxDispatch,
@@ -10,10 +9,8 @@ import type {
   UiState,
 } from './ui';
 
-export type {
-  UiAction,
-  UiState,
-} from './ui';
+export * from './ui';
+export * from './resources';
 
 // Add new actions using |
 export type Action =
