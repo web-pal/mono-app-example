@@ -46,7 +46,6 @@ function* fetchResources({
           },
         },
       );
-    console.log(response);
     const normalizedData = jsonApiNormalizr(response);
     yield put(actions.succeeded({
       resources: normalizedData.resources,

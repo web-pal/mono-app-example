@@ -14,6 +14,7 @@ import type {
 
 import {
   getResourceWithRelationsMappedList,
+  variantsStringAttribute,
 } from 'core/selectors';
 
 
@@ -26,6 +27,7 @@ const columns = [{
   dataIndex: 'attributes.name',
   key: 'name',
 }, {
+  // Custom attribute
   title: 'Variants',
   dataIndex: 'ca.variants',
   key: 'variants',
@@ -49,10 +51,9 @@ const mapStateToProps = (state: State) => ({
     'forTable',
     state,
     resource => ({
-      variants:
-        resource.rl.productsVariants
-          .filter(p => !p.attributes.isRaw)
-          .map(p => (p.attributes.name)).join(', '),
+      variants: variantsStringAttribute({
+        resource,
+      }),
     }),
   )(state),
 });
