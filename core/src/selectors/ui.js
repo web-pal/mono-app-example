@@ -5,4 +5,4 @@ import type {
 
 
 export const getUiState = (key: string) =>
-  ({ ui }: { ui: UiState }) => ui[key];
+  ({ ui }: $ReadOnly<{ ui: UiState }>) => ui[key];

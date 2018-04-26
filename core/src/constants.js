@@ -6,4 +6,5 @@ import type {
 export const resourcesList: Array<ResourceType> = [
   'products',
   'productsPrices',
+  'productsVariants',
 ];

@@ -7,9 +7,13 @@ import {
   Table,
 } from 'antd';
 
+import type {
+  State,
+  ProductResource,
+} from 'core/types';
+
 import {
-  getUiState,
-  getResourceMappedList,
+  getResourceWithRelationsMappedList,
 } from 'core/selectors';
 
 
@@ -21,30 +25,36 @@ const columns = [{
   title: 'Product name',
   dataIndex: 'attributes.name',
   key: 'name',
+}, {
+  title: 'Variants',
+  dataIndex: 'ca.variants',
+  key: 'variants',
 }];
 
 type Props = {
-  dataSource: Array<{
-    id: ID,
-    attributes: {
-      name: string,
-    },
-  }>,
+  dataSource: Array<ProductResource>,
 };
 
 const ProductsTableContainer = ({ dataSource }: Props) => (
-  <div>
-    <Table
-      rowKey="id"
-      dataSource={dataSource}
-      columns={columns}
-    />
-  </div>
+  <Table
+    rowKey="id"
+    dataSource={dataSource}
+    columns={columns}
+  />
 );
 
-const mapStateToProps = state => ({
-  randomString: getUiState('randomString')(state),
-  dataSource: getResourceMappedList('products', 'forTable')(state),
+const mapStateToProps = (state: State) => ({
+  dataSource: getResourceWithRelationsMappedList(
+    'products',
+    'forTable',
+    state,
+    resource => ({
+      variants:
+        resource.rl.productsVariants
+          .filter(p => !p.attributes.isRaw)
+          .map(p => (p.attributes.name)).join(', '),
+    }),
+  )(state),
 });
 
 const connector = connect(

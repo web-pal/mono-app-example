@@ -1,13 +1,57 @@
 // @flow
 import * as actionTypes from '../actions/actionTypes';
+import type {
+  ProductResource,
+} from './products';
+import type {
+  ProductsPriceResource,
+} from './productsPrices';
+import type {
+  ProductsVariantResource,
+} from './productsVariants';
 
-export type ResourcesReducersList = {
-  products: any,
-  productsPrices: any,
+export type Resources = {
+  products: ProductResource,
+  productsPrices: ProductsPriceResource,
+  productsVariants: ProductsVariantResource,
 };
 
-export type ResourceType = $Keys<ResourcesReducersList>;
+export type ResourceMap = {
+  [ID]: $Values<Resources>,
+};
 
+export type ResourcesReducersList = $ReadOnly<{
+  [$Keys<Resources>]: {
+    [ID]: $Values<Resources>,
+  },
+}>;
+
+export type ResourceType = $Keys<ResourcesReducersList>;
+export type ResourceValue = $Values<ResourcesReducersList>;
+
+type ResourceStatuses =
+  'IDLE' |
+  'PENDING' |
+  'SUCCEDED' |
+  'FAILED';
+
+export type ResourceMeta = {|
+  [ID]: {|
+    createStatus: ResourceStatuses,
+    readStatus: ResourceStatuses,
+    updateStatus: ResourceStatuses,
+    deleteStatus: ResourceStatuses,
+  |}
+|};
+
+export type ResourceRequests = {|
+  [string]: {|
+    requestKey: string,
+    resourceType: ResourceType,
+    status: ResourceStatuses,
+    ids: Array<ID>,
+  |},
+|}
 
 export type ResourcesAction =
   {|
@@ -16,3 +60,4 @@ export type ResourcesAction =
     requestKey: string,
     list: string,
   |};
+

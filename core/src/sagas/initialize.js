@@ -12,8 +12,8 @@ export default function* initialize(): Generator<*, void, *> {
   try {
     yield put(resourcesActions.fetchResourcesRequest({
       resourceType: 'products',
-      requestKey: 'fetchProductsForTable',
       list: 'forTable',
+      requestKey: 'fetchProductsForTable',
     }));
   } catch (err) {
     console.log(err);

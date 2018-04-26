@@ -41,8 +41,12 @@ function* fetchResources({
         Api.fetchResourcesApi,
         {
           resourceType,
+          limitCondition: {
+            limit: 10,
+          },
         },
       );
+    console.log(response);
     const normalizedData = jsonApiNormalizr(response);
     yield put(actions.succeeded({
       resources: normalizedData.resources,

@@ -7,9 +7,12 @@ const normalzeResourceItem = resource => ({
   attributes: resource.attributes,
   relationships: R.keys(resource.relationships).reduce(
     (relations, key) => {
-      relations[key] = Array.isArray(resource.relationships[key].data)
-        ? resource.relationships[key].data.map(relationData => relationData.id)
-        : resource.relationships[key].data.id;
+      const isMany = Array.isArray(resource.relationships[key].data);
+      const { data } = resource.relationships[key];
+      relations[key] = {
+        type: isMany ? data[0].type : data.type,
+        data: isMany ? data.map(relationData => relationData.id) : data.id,
+      };
       return relations;
     },
     {},
@@ -31,6 +34,7 @@ export const jsonApiNormalizr = (
     included: Array<any>,
   },
 ) => ({
+  // $FlowFixMe
   resources: entry.data.map(normalzeResourceItem),
   includedResources: entry.included.reduce(reduceResourceItem, {}),
 });

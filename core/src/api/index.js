@@ -55,7 +55,7 @@ export function fetchResourcesApi({
       `${sortDirection}${sortBy}`,
     ],
   };
-  const apiUrl = 'https://api.delivermd.com/api';
+  const apiUrl = 'https://api-stage.delivermd.com/api';
   return fetch(
     `${apiUrl}/${resourceType}/marketplace/filter`,
     {
