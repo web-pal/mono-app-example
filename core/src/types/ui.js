@@ -18,3 +18,5 @@ export type UiAction =
 export type UiState = {|
   randomString: string,
 |};
+
+export type UiStateKey = $Subtype<$Keys<UiState>>;

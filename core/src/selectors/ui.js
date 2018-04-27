@@ -1,8 +1,14 @@
 // @flow
 import type {
+  State,
   UiState,
+  UiStateKey,
 } from '../types';
 
 
-export const getUiState = (key: string) =>
-  ({ ui }: $ReadOnly<{ ui: UiState }>) => ui[key];
+export function getUiState<UK: UiStateKey>(
+  key: UK,
+): (State) => $ElementType<UiState, UK> {
+  return state =>
+    state.ui[key];
+}
