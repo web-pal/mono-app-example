@@ -8,3 +8,13 @@ export const resourcesList: Array<ResourceType> = [
   'productsPrices',
   'productsVariants',
 ];
+
+export const initialResoucesLists: {
+  [ResourceType]: {
+    [string]: Array<ID>,
+  },
+} = {
+  products: {
+    forTable: [],
+  },
+};

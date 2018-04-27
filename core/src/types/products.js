@@ -1,4 +1,12 @@
 // @flow
+import type {
+  ProductsPriceResource,
+} from './productsPrices';
+import type {
+  ProductsVariantResource,
+} from './productsVariants';
+
+
 export type ProductAttributes = {
   name: string,
 };
@@ -18,6 +26,9 @@ export type ProductResource = {
   id: ID,
   attributes: ProductAttributes,
   relationships: ProductRelationships,
-  rl?: any,
+  rl?: {
+    productsPrices: Array<ProductsPriceResource>,
+    productsVariants: Array<ProductsVariantResource>,
+  },
 };
 

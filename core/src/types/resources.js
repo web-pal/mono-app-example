@@ -16,24 +16,14 @@ export type Resources = {
   productsVariants: ProductsVariantResource,
 };
 
-export type ResourceMap = {
-  [ID]: $Values<Resources>,
-};
-
-export type ResourcesReducersList = $ReadOnly<{
-  [$Keys<Resources>]: {
-    [ID]: $Values<Resources>,
-  },
-}>;
-
-export type ResourceType = $Keys<ResourcesReducersList>;
-export type ResourceValue = $Values<ResourcesReducersList>;
-
 type ResourceStatuses =
   'IDLE' |
   'PENDING' |
   'SUCCEDED' |
   'FAILED';
+
+export type ResourceType = $Subtype<$Keys<Resources>>;
+export type ResourceValue = $Subtype<$Values<Resources>>;
 
 export type ResourceMeta = {|
   [ID]: {|

@@ -10,9 +10,8 @@ import type {
 } from './ui';
 
 import type {
+  Resources,
   ResourcesAction,
-  ResourceType,
-  ResourceValue,
   ResourceMeta,
   ResourceRequests,
 } from './resources';
@@ -28,18 +27,42 @@ export type Action =
   UiAction |
   ResourcesAction;
 
-export type State = $ReadOnly<{
+export type State = {|
   ui: UiState,
-  [ResourceType]: {|
-    resources: ResourceValue,
+  products: {
+    resources: {
+      [ID]: $PropertyType<Resources, 'products'>,
+    },
     meta: ResourceMeta,
     requests: ResourceRequests,
-    lists: {|
+    lists: {
+      forTable: Array<ID>,
+    },
+    resourceType: 'products',
+  },
+  productsPrices: {
+    resources: {
+      [ID]: $PropertyType<Resources, 'productsPrices'>,
+    },
+    meta: ResourceMeta,
+    requests: ResourceRequests,
+    lists: {
       [string]: Array<ID>,
-    |},
-    resourceType: ResourceType,
-  |}
-}>
+    },
+    resourceType: 'productsPrices',
+  },
+  productsVariants: {
+    resources: {
+      [ID]: $PropertyType<Resources, 'productsVariants'>,
+    },
+    meta: ResourceMeta,
+    requests: ResourceRequests,
+    lists: {
+      [string]: Array<ID>,
+    },
+    resourceType: 'productsVariants',
+  },
+|};
 
 export type Store = ReduxStore<State, Action>;
 export type Dispatch = ReduxDispatch<Action>;

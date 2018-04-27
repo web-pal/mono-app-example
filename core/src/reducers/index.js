@@ -11,6 +11,7 @@ import {
 
 import {
   resourcesList,
+  initialResoucesLists,
 } from '../constants';
 
 
@@ -26,6 +27,11 @@ const rootReducer = combineReducers({
         resourceName,
         {
           plugins: [includedResources],
+          initialState: {
+            lists: {
+              ...(initialResoucesLists[resourceName] || {}),
+            },
+          },
         },
       ),
     }), {},

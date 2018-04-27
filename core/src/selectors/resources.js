@@ -11,33 +11,30 @@ import type {
   State,
   ResourceType,
   ResourceValue,
-  ResourcesReducersList,
   Resources,
 } from '../types';
 
-export const getResourceIds = (
-  resourceType: ResourceType,
-  list: string,
-) =>
-  (state: State): Array<ID> => {
-    if (!state[resourceType]) {
-      return [];
-    }
-    return state[resourceType].lists[list] || [];
-  };
+function getResourceIds<T: ResourceType, L: string>(
+  resourceType: T,
+  list: L,
+): (State) => $ElementType<$PropertyType<$ElementType<State, T>, 'lists'>, L> {
+  return state =>
+    state[resourceType].lists[list] || [];
+}
 
-export const getResourceMap = (
-  resourceType: ResourceType,
-) =>
-  (state: State): ResourceValue =>
-    (state[resourceType] ? state[resourceType].resources : {});
+function getResourceMap<T: ResourceType>(
+  resourceType: T,
+): (State) => $PropertyType<$ElementType<State, T>, 'resources'> {
+  return state =>
+    state[resourceType].resources;
+}
 
 const resourceSelectors = {};
 
-export const getResourceMappedList = (
-  resourceType: ResourceType,
-  list: string,
-): Selector<State, any, Array<$Values<ResourceValue>>> => {
+export function getResourceMappedList<T: ResourceType, L: string>(
+  resourceType: T,
+  list: L,
+): Selector<State, any, $TupleMap<$ElementType<$PropertyType<$ElementType<State, T>, 'lists'>, L>, <V: ID>(id: V) => $ElementType<Resources, T>>> {
   if (resourceSelectors[resourceType]) {
     return resourceSelectors[`${resourceType}${list}`];
   }
@@ -54,15 +51,15 @@ export const getResourceMappedList = (
         ids.map(id => map[id]),
     );
   return resourceSelectors[`${resourceType}${list}`];
-};
+}
 
 
-export const getNestedResourceItem = (
-  resourceType: ResourceType,
+export function getNestedResourceItem<T: ResourceType, S: Resources>(
+  resourceType: T,
   id: ID,
-  state: ResourcesReducersList,
-  customAttributesCreator: any,
-) => {
+  state: S,
+  customAttributesCreator?: (resource: ResourceValue, state: S) => { [string]: any },
+): $ElementType<S, T> {
   const resource = state[resourceType][id];
   resource.rl = R.values(resource.relationships).reduce(
     (acc, relT) => {
@@ -86,16 +83,14 @@ export const getNestedResourceItem = (
     resource.ca = customAttributesCreator(resource, state);
   }
   return resource;
-};
+}
 
-export const getResourceWithRelationsMappedList = (
-  resourceType: ResourceType,
-  list: string,
+export function getResourceWithRelationsMappedList<T: ResourceType, L: string>(
+  resourceType: T,
+  list: L,
   state: State,
-  customAttributesCreator: (
-    resource: any,
-  ) => any,
-): any => {
+  customAttributesCreator?: (resource: ResourceValue, state: Resources) => { [string]: any },
+): Selector<State, any, $TupleMap<$ElementType<$PropertyType<$ElementType<State, T>, 'lists'>, L>, <V: ID>(id: V) => $ElementType<Resources, T>>> {
   // Return list of dependecies resourcesTypes
   const getResourceRelationships = (
     rT: ResourceType,
@@ -152,6 +147,7 @@ export const getResourceWithRelationsMappedList = (
             getNestedResourceItem(
               resourceType,
               id,
+              // $FlowFixMe
               relResourceTypes.reduce(
                 (acc, rT, index) => {
                   acc[rT] = resourcesMap[index];
@@ -164,11 +160,12 @@ export const getResourceWithRelationsMappedList = (
         ),
     );
   return resourceSelectors[selectorName];
-};
+}
 
-export const getResourceItemBydId = (
-  resourceType: ResourceType,
-  id: ID,
-) =>
-  (state: State): $Values<Resources> | null =>
+export function getResourceItemBydId<T: ResourceType, I: ID>(
+  resourceType: T,
+  id: I,
+): (State) => $ElementType<$PropertyType<$ElementType<State, T>, 'resources'>, I> {
+  return state =>
     state[resourceType].resources[id] || null;
+}

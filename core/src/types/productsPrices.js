@@ -1,4 +1,9 @@
 // @flow
+import type {
+  ProductResource,
+} from './products';
+
+
 export type ProductsPriceAttributes = {
   name: string,
   price: number,
@@ -15,5 +20,7 @@ export type ProductsPriceResource = {
   id: ID,
   attributes: ProductsPriceAttributes,
   relationships: ProductsPriceRelationships,
-  rl?: any,
+  rl?: {
+    product: ProductResource,
+  },
 };
