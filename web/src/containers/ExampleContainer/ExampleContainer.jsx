@@ -5,6 +5,7 @@ import {
 } from 'react-redux';
 
 import type {
+  State,
   Dispatch,
 } from 'core/types';
 
@@ -36,7 +37,7 @@ const ExampleContainer = ({
   />
 );
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state: State) => ({
   randomString: getUiState('randomString')(state),
 });
 
