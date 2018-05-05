@@ -16,7 +16,7 @@
     "redux": "4.0.0",
     "redux-logger": "3.0.6",
     "redux-saga": "0.16.0",
-    "styled-components": "^3.2.6"
+    "styled-components": "3.2.6"
   },
   "devDependencies": {
     "@babel/core": "7.0.0-beta.44",
@@ -24,7 +24,6 @@
     "@babel/preset-flow": "7.0.0-beta.44",
     "@babel/preset-react": "7.0.0-beta.44",
     "@babel/preset-stage-0": "7.0.0-beta.44",
-    "babel-eslint": "8.2.3",
     "babel-loader": "8.0.0-beta.2",
     "babel-plugin-import": "1.7.0",
     "css-loader": "0.28.11",

@@ -31,10 +31,18 @@ function getResourceMap<T: ResourceType>(
 
 const resourceSelectors = {};
 
+/* Selector which return list of resources without relationships */
 export function getResourceMappedList<T: ResourceType, L: string>(
   resourceType: T,
   list: L,
-): Selector<State, any, $TupleMap<$ElementType<$PropertyType<$ElementType<State, T>, 'lists'>, L>, <V: ID>(id: V) => $ElementType<Resources, T>>> {
+): Selector<
+     State,
+     any,
+     $TupleMap<
+       $ElementType<$PropertyType<$ElementType<State, T>, 'lists'>, L>,
+       <V: ID>(id: V) => $ElementType<Resources, T>
+     >
+   > {
   if (resourceSelectors[resourceType]) {
     return resourceSelectors[`${resourceType}${list}`];
   }
@@ -85,12 +93,21 @@ export function getNestedResourceItem<T: ResourceType, S: Resources>(
   return resource;
 }
 
+/* Selector which return list of resources with all relationships */
 export function getResourceWithRelationsMappedList<T: ResourceType, L: string>(
   resourceType: T,
   list: L,
   state: State,
+  // customAttributesCreator allow extend resource object with custom attributes
   customAttributesCreator?: (resource: ResourceValue, state: Resources) => { [string]: any },
-): Selector<State, any, $TupleMap<$ElementType<$PropertyType<$ElementType<State, T>, 'lists'>, L>, <V: ID>(id: V) => $ElementType<Resources, T>>> {
+): Selector<
+     State,
+     any,
+     $TupleMap<
+       $ElementType<$PropertyType<$ElementType<State, T>, 'lists'>, L>,
+       <V: ID>(id: V) => $ElementType<Resources, T>
+     >
+   > {
   // Return list of dependecies resourcesTypes
   const getResourceRelationships = (
     rT: ResourceType,

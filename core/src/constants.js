@@ -9,6 +9,7 @@ export const resourcesList: Array<ResourceType> = [
   'productsVariants',
 ];
 
+
 export const initialResoucesLists: {
   [ResourceType]: {
     [string]: Array<ID>,

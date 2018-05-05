@@ -27,42 +27,24 @@ export type Action =
   UiAction |
   ResourcesAction;
 
-export type State = {|
+type RestState = {|
   ui: UiState,
-  products: {
-    resources: {
-      [ID]: $PropertyType<Resources, 'products'>,
-    },
-    meta: ResourceMeta,
-    requests: ResourceRequests,
-    lists: {
-      forTable: Array<ID>,
-    },
-    resourceType: 'products',
-  },
-  productsPrices: {
-    resources: {
-      [ID]: $PropertyType<Resources, 'productsPrices'>,
-    },
-    meta: ResourceMeta,
-    requests: ResourceRequests,
-    lists: {
-      [string]: Array<ID>,
-    },
-    resourceType: 'productsPrices',
-  },
-  productsVariants: {
-    resources: {
-      [ID]: $PropertyType<Resources, 'productsVariants'>,
-    },
-    meta: ResourceMeta,
-    requests: ResourceRequests,
-    lists: {
-      [string]: Array<ID>,
-    },
-    resourceType: 'productsVariants',
-  },
 |};
+
+type ResourcesState = $ObjMap<Resources,
+  <T>(T) => {
+    resources: {
+      [ID]: $Exact<T>,
+    },
+    meta: ResourceMeta,
+    requests: ResourceRequests,
+    lists: {
+      [string]: Array<ID>,
+    },
+    resourceType: string,
+  }>
+
+export type State = RestState & ResourcesState;
 
 export type Store = ReduxStore<State, Action>;
 export type Dispatch = ReduxDispatch<Action>;

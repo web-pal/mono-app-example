@@ -2,7 +2,13 @@
   "name": "mono-web-example",
   "private": true,
   "scripts": {
-    "flow": "flow check"
+    "flow:all": "flow check",
+    "flow:core": "flow check core",
+    "flow:web": "flow check web",
+    "lint": "eslint --ext .js,.jsx --ignore-pattern '**/node_modules/*' --ignore-pattern '*.min.js' --ignore-pattern '/dist/' --ignore-pattern '*.prod.js'",
+    "lint:all": "yarn lint ./core ./web",
+    "lint:core": "yarn lint ./core",
+    "lint:web": "yarn lint ./web"
   },
   "workspaces": [
     "core",
@@ -10,6 +16,7 @@
   ],
   "devDependencies": {
     "eslint": "4.19.1",
+    "babel-eslint": "8.2.3",
     "eslint-config-airbnb": "16.1.0",
     "eslint-import-resolver-webpack": "0.9.0",
     "eslint-plugin-flowtype": "2.46.2",
