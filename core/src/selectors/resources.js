@@ -22,6 +22,13 @@ function getResourceIds<T: ResourceType, L: string>(
     state[resourceType].lists[list] || [];
 }
 
+export function getResourceAllIds<T: ResourceType >(
+  resourceType: T,
+): (State) => Array<ID> {
+  return state =>
+    Object.keys(state[resourceType].resources);
+}
+
 function getResourceMap<T: ResourceType>(
   resourceType: T,
 ): (State) => $PropertyType<$ElementType<State, T>, 'resources'> {

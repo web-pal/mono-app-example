@@ -13,7 +13,7 @@ import {
 } from './styled';
 
 
-export type Props = {
+type Props = {
   randomString: string,
   generateRandomString: () => Action | void,
 };
