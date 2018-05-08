@@ -124,7 +124,6 @@ export function getResourceWithRelationsMappedList<T: ResourceType, L: string>(
     const resourceMap = getResourceMap(rT)(state);
 
     const resource = resourceIds[0] ? resourceMap[resourceIds[0]] : null;
-
     return (
       resource ? [
         ...R.values(resource.relationships)

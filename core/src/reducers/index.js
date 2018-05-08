@@ -24,8 +24,7 @@ const rootReducer = combineReducers({
     (acc, resourceName) => ({
       ...acc,
       [resourceName]: resourceReducer(
-        resourceName,
-        {
+        resourceName, {
           plugins: [includedResources],
           initialState: {
             lists: {
