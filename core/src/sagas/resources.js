@@ -42,7 +42,7 @@ function* fetchResources({
         {
           resourceType,
           limitCondition: {
-            limit: 10,
+            limit: 20,
           },
         },
       );

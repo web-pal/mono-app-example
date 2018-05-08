@@ -18,3 +18,4 @@ export const variantsStringAttribute = ({
       .map(p => (p.attributes.name)).join(delimiter) :
     ''
 );
+
