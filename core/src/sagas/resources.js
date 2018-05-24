@@ -23,14 +23,36 @@ function* fetchResources({
   resourceType,
   requestKey,
   list,
+  relationList,
+  resources = [],
+  query,
 }: {|
   resourceType: ResourceType,
   requestKey: string,
   list: string,
+  relationList?: string,
+  resources: Array<ID>,
+  query: {
+    withDeleted: boolean,
+    page: {
+      limit: number,
+      offset: number,
+    },
+    sort: Array<string>,
+    filter: {
+      [string]: any,
+    },
+    search: {
+      [string]: any,
+    },
+    include: Array<string>,
+    fields: Array<string>,
+  },
 |}): Generator<*, void, *> {
   const actions = createActionCreators('read', {
     resourceType,
     requestKey,
+    resources,
     list,
     mergeListIds: false,
   });
@@ -41,15 +63,14 @@ function* fetchResources({
         Api.fetchResourcesApi,
         {
           resourceType,
-          limitCondition: {
-            limit: 10,
-          },
+          ...query,
         },
       );
     const normalizedData = jsonApiNormalizr(response);
     yield put(actions.succeeded({
       resources: normalizedData.resources,
       includedResources: normalizedData.includedResources,
+      relationList,
     }));
   } catch (err) {
     console.log(err);

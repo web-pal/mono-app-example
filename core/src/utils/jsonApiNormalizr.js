@@ -1,18 +1,24 @@
 // @flow
 import * as R from 'ramda';
 
+
+const isMany = data => Array.isArray(data);
+const isDataExist = data => (isMany(data) && data.length) || (!isMany(data) && data);
+const getDataType = data => (isMany(data) ? data[0].type : data.type);
 /* eslint-disable no-param-reassign */
 const normalzeResourceItem = resource => ({
   id: resource.id,
   attributes: resource.attributes,
   relationships: R.keys(resource.relationships).reduce(
     (relations, key) => {
-      const isMany = Array.isArray(resource.relationships[key].data);
       const { data } = resource.relationships[key];
-      relations[key] = {
-        type: isMany ? data[0].type : data.type,
-        data: isMany ? data.map(relationData => relationData.id) : data.id,
-      };
+      const iM = isMany(data);
+      if (isDataExist(data)) {
+        relations[key] = {
+          type: getDataType(data),
+          data: iM ? data.map(relationData => relationData.id) : data.id,
+        };
+      }
       return relations;
     },
     {},
@@ -35,6 +41,6 @@ export const jsonApiNormalizr = (
   },
 ) => ({
   // $FlowFixMe
-  resources: entry.data.map(normalzeResourceItem),
+  resources: (Array.isArray(entry.data) ? entry.data : [entry.data]).map(normalzeResourceItem),
   includedResources: entry.included.reduce(reduceResourceItem, {}),
 });

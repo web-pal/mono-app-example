@@ -3,6 +3,10 @@ import type {
   ResourceType,
 } from '../types';
 
+import {
+  defaultResourceInclude,
+} from '../constants';
+
 type ApiResponse = {
   data: Array<any>,
   included: Array<any>,
@@ -18,42 +22,41 @@ type ApiResponse = {
 };
 
 export function fetchResourcesApi({
-  sortBy = 'id',
-  sortDirection = '',
-  withDeleted = false,
-  limitCondition = {},
-  offsetCondition = {},
-  filterCondition = {},
-  include = [],
-  fields = [],
   resourceType,
+  withDeleted = false,
+  page,
+  sort = ['id'],
+  filter,
+  search,
+  include = [],
+  fields,
 }: {
-  sortBy?: string,
-  sortDirection?: string,
-  withDeleted?: boolean,
-  limitCondition?: any,
-  offsetCondition?: any,
-  filterCondition?: any,
-  include?: Array<string>,
-  fields?: Array<string>,
   resourceType: ResourceType,
+  withDeleted: boolean,
+  page: {
+    limit: number,
+    offset: number,
+  },
+  sort: Array<string>,
+  filter: {
+    [string]: any,
+  },
+  search: {
+    [string]: any,
+  },
+  include: Array<string>,
+  fields: Array<string>,
 }): Promise<ApiResponse> {
-  const pageConditionObject = {
-    page: {
-      ...limitCondition,
-      ...offsetCondition,
-    },
-  };
-  const pageCondition = pageConditionObject.page ? pageConditionObject : {};
   const requestData = {
     withDeleted,
-    ...pageCondition,
-    ...filterCondition,
-    include,
+    page,
+    sort,
+    filter,
+    search,
+    include: defaultResourceInclude[resourceType] ?
+      defaultResourceInclude[resourceType].concat(include) :
+      [],
     fields,
-    sort: [
-      `${sortDirection}${sortBy}`,
-    ],
   };
   const apiUrl = 'https://api-stage.delivermd.com/api';
   return fetch(

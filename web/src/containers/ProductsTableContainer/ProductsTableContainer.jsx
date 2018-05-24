@@ -13,7 +13,7 @@ import type {
 } from 'core/types';
 
 import {
-  getResourceWithRelationsMappedList,
+  getResourceNestedMappedList,
   variantsStringAttribute,
 } from 'core/selectors';
 
@@ -46,10 +46,11 @@ const ProductsTableContainer = ({ dataSource }: Props) => (
 );
 
 const mapStateToProps = (state: State) => ({
-  dataSource: getResourceWithRelationsMappedList(
+  dataSource: getResourceNestedMappedList(
     'products',
     'forTable',
     state,
+    false,
     resource => ({
       variants: variantsStringAttribute({
         resource,

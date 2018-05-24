@@ -76,35 +76,43 @@ export function getNestedResourceItem<T: ResourceType, S: Resources>(
   customAttributesCreator?: (resource: ResourceValue, state: S) => { [string]: any },
 ): $ElementType<S, T> {
   const resource = state[resourceType][id];
-  resource.rl = R.values(resource.relationships).reduce(
-    (acc, relT) => {
-      acc[relT.type] = Array.isArray(relT.data) ?
-        relT.data.map(rId => getNestedResourceItem(
-          relT.type,
-          rId,
-          state,
-        )) :
-        getNestedResourceItem(
-          relT.type,
-          relT.data,
-          state,
-        );
-      return acc;
-    },
-    {},
-  );
+  const resourceWithRl = {
+    ...resource,
+    rl: R.keys(resource.relationships).reduce(
+      (acc, relationName) => {
+        const relT = resource.relationships[relationName];
+        acc[relationName] = Array.isArray(relT.data) ?
+          relT.data.map(rId => getNestedResourceItem(
+            relT.type,
+            rId,
+            state,
+          )) :
+          getNestedResourceItem(
+            relT.type,
+            relT.data,
+            state,
+          );
+        return acc;
+      },
+      {},
+    ),
+  };
   if (customAttributesCreator) {
     // $FlowFixMe
-    resource.ca = customAttributesCreator(resource, state);
+    resourceWithRl.ca = customAttributesCreator(resourceWithRl, state);
   }
-  return resource;
+  return resourceWithRl;
 }
 
 /* Selector which return list of resources with all relationships */
-export function getResourceWithRelationsMappedList<T: ResourceType, L: string>(
+export function getResourceNestedMappedList<
+  T: ResourceType,
+  L: string,
+>(
   resourceType: T,
   list: L,
   state: State,
+  reverse: boolean = false,
   // customAttributesCreator allow extend resource object with custom attributes
   customAttributesCreator?: (resource: ResourceValue, state: Resources) => { [string]: any },
 ): Selector<
@@ -113,51 +121,20 @@ export function getResourceWithRelationsMappedList<T: ResourceType, L: string>(
      $TupleMap<
        $ElementType<$PropertyType<$ElementType<State, T>, 'lists'>, L>,
        <V: ID>(id: V) => $ElementType<Resources, T>
-     >
+     >,
    > {
-  // Return list of dependecies resourcesTypes
-  const getResourceRelationships = (
-    rT: ResourceType,
-    rList: string | Array<ID>,
-  ): Array<ResourceType> => {
-    const resourceIds = (typeof rList === 'string') ? getResourceIds(rT, rList)(state) : list;
-    const resourceMap = getResourceMap(rT)(state);
+  const relDependencies = (state[resourceType].lists[`${list}Dependencies`] || []);
+  const selectorName = `${resourceType}${list}${relDependencies.join()}`;
+  if (resourceSelectors[selectorName]) {
+    return resourceSelectors[selectorName];
+  }
 
-    const resource = resourceIds[0] ? resourceMap[resourceIds[0]] : null;
-
-    return (
-      resource ? [
-        ...R.values(resource.relationships)
-          .map(rel => rel.type),
-        ...[].concat(
-          ...R.values(resource.relationships)
-            .map(rel => getResourceRelationships(
-              rel.type,
-              Array.isArray(rel.data) ? rel.data : [rel.data],
-            )),
-        ),
-      ] :
-        []
-    );
-  };
-
-  const relResourceTypes = [...new Set([
-    resourceType,
-    ...(
-      getResourceRelationships(
-        resourceType,
-        list,
-      )
-    ),
-  ].filter(st => state[st]))];
-
-  const selectorName = `${resourceType}${list}${relResourceTypes.join()}`;
   resourceSelectors[selectorName] =
     // $FlowFixMe it can't be fixed because of reselect definition
     createSelector(
       [
         getResourceIds(resourceType, list),
-        ...relResourceTypes.map(
+        ...relDependencies.map(
           rt =>
             getResourceMap(rt),
         ),
@@ -166,13 +143,13 @@ export function getResourceWithRelationsMappedList<T: ResourceType, L: string>(
         ids = [],
         ...resourcesMap
       ) =>
-        ids.map(
+        (reverse ? R.reverse(ids) : ids).map(
           id =>
             getNestedResourceItem(
               resourceType,
               id,
               // $FlowFixMe
-              relResourceTypes.reduce(
+              relDependencies.reduce(
                 (acc, rT, index) => {
                   acc[rT] = resourcesMap[index];
                   return acc;

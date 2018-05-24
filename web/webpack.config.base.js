@@ -28,7 +28,12 @@ module.exports = {
             cacheDirectory: true,
             presets: [
               '@babel/preset-env',
-              '@babel/stage-0',
+              [
+                '@babel/stage-0',
+                {
+                  decoratorsLegacy: true,
+                },
+              ],
               '@babel/react',
               '@babel/flow',
             ],

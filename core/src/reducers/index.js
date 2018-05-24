@@ -5,10 +5,9 @@ import {
 import {
   resourceReducer,
 } from 'redux-resource';
-import {
-  includedResources,
-} from 'redux-resource-plugins';
 
+import includedResources from './plugins/includedResources';
+import dependenciesList from './plugins/dependenciesList';
 import {
   resourcesList,
   initialResoucesLists,
@@ -26,7 +25,10 @@ const rootReducer = combineReducers({
       [resourceName]: resourceReducer(
         resourceName,
         {
-          plugins: [includedResources],
+          plugins: [
+            includedResources,
+            dependenciesList,
+          ],
           initialState: {
             lists: {
               ...(initialResoucesLists[resourceName] || {}),

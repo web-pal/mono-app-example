@@ -1,5 +1,5 @@
 [version]
-0.70.0
+0.72.0
 
 [ignore]
 .*/node_modules/.*
