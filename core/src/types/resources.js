@@ -9,11 +9,19 @@ import type {
 import type {
   ProductsVariantResource,
 } from './productsVariants';
+import type {
+  ProductsSubcategoryResource,
+} from './productsSubcategories';
+import type {
+  StrainsCategoryResource,
+} from './strainsCategories';
 
 export type Resources = {
   products: ProductResource,
   productsPrices: ProductsPriceResource,
   productsVariants: ProductsVariantResource,
+  productsSubcategories: ProductsSubcategoryResource,
+  strainsCategories: StrainsCategoryResource,
 };
 
 type ResourceStatuses =

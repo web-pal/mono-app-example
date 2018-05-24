@@ -21,6 +21,8 @@ export * from './ui';
 export * from './products';
 export * from './productsPrices';
 export * from './productsVariants';
+export * from './productsSubcategories';
+export * from './strainsCategories';
 export * from './resources';
 
 export type Action =
