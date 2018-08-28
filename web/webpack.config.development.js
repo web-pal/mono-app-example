@@ -6,28 +6,16 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const config = require('./webpack.config.base');
 
 
-module.exports = merge(config, {
+module.exports = env => merge(config(env), {
   mode: 'development',
   devtool: 'eval-source-map',
-  entry: {
-    app: [
-      'babel-polyfill',
-      path.join(__dirname, 'src/index.jsx'),
-    ],
-  },
   plugins: [
     new HtmlWebpackPlugin({
       template: 'src/index.tpl.html',
       inject: 'body',
       filename: 'index.html',
     }),
-    new webpack.DefinePlugin({
-      __DEV__: true,
-      'process.env.BROWSER': true,
-    }),
-    new webpack.ProvidePlugin({
-      React: 'react',
-    }),
+    new webpack.NamedModulesPlugin(),
     new webpack.HotModuleReplacementPlugin(),
   ],
 
@@ -37,9 +25,9 @@ module.exports = merge(config, {
     hot: true,
     lazy: false,
     compress: true,
-    stats: 'errors-only',
+    stats: 'minimal',
     watchOptions: {
-      aggregateTimeout: 300,
+      aggregateTimeout: 1000,
       ignored: /node_modules/,
       poll: 100,
     },
