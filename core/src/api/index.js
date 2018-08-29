@@ -53,9 +53,11 @@ export function fetchResourcesApi({
     sort,
     filter,
     search,
-    include: defaultResourceInclude[resourceType] ?
-      defaultResourceInclude[resourceType].concat(include) :
-      [],
+    include: (
+      defaultResourceInclude[resourceType]
+        ? defaultResourceInclude[resourceType].concat(include)
+        : []
+    ),
     fields,
   };
   const apiUrl = 'https://api-stage.delivermd.com/api';

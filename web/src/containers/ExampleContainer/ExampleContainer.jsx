@@ -31,8 +31,9 @@ const ExampleContainer = ({
   <ExampleComponent
     randomString={randomString}
     generateRandomString={
-      () =>
+      () => (
         dispatch(uiActions.generateRandomString())
+      )
     }
   />
 );

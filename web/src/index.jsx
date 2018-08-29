@@ -18,12 +18,13 @@ import Base from './containers/Base';
 
 const rootEl: HTMLElement = window.document.getElementById('root');
 
-const render: Function = (Component: ComponentType<*>) =>
+const render: Function = (Component: ComponentType<*>) => (
   reactRender(
     <Provider store={store}>
       <Component />
     </Provider>,
     rootEl,
-  );
+  )
+);
 
 render(Base);

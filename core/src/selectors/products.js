@@ -12,9 +12,11 @@ export const variantsStringAttribute = ({
   showRaw?: boolean,
   delimiter?: string,
 }): string => (
-  resource.rl ?
-    resource.rl.productsVariants
-      .filter(p => showRaw || !p.attributes.isRaw)
-      .map(p => (p.attributes.name)).join(delimiter) :
-    ''
+  resource.rl
+    ? (
+      resource.rl.productsVariants
+        .filter(p => showRaw || !p.attributes.isRaw)
+        .map(p => (p.attributes.name)).join(delimiter)
+    )
+    : ''
 );

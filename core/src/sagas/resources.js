@@ -58,14 +58,13 @@ function* fetchResources({
   });
   try {
     yield put(actions.pending());
-    const response =
-      yield call(
-        Api.fetchResourcesApi,
-        {
-          resourceType,
-          ...query,
-        },
-      );
+    const response = yield call(
+      Api.fetchResourcesApi,
+      {
+        resourceType,
+        ...query,
+      },
+    );
     const normalizedData = jsonApiNormalizr(response);
     yield put(actions.succeeded({
       resources: normalizedData.resources,

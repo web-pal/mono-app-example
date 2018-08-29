@@ -64,4 +64,3 @@ const connector = connect(
 );
 
 export default connector(ProductsTableContainer);
-

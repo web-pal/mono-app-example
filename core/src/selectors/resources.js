@@ -18,22 +18,25 @@ function getResourceIds<T: ResourceType, L: string>(
   resourceType: T,
   list: L,
 ): (State) => $ElementType<$PropertyType<$ElementType<State, T>, 'lists'>, L> {
-  return state =>
-    state[resourceType].lists[list] || [];
+  return state => (
+    state[resourceType].lists[list] || []
+  );
 }
 
 export function getResourceAllIds<T: ResourceType >(
   resourceType: T,
 ): (State) => Array<ID> {
-  return state =>
-    Object.keys(state[resourceType].resources);
+  return state => (
+    Object.keys(state[resourceType].resources)
+  );
 }
 
 function getResourceMap<T: ResourceType>(
   resourceType: T,
 ): (State) => $PropertyType<$ElementType<State, T>, 'resources'> {
-  return state =>
-    state[resourceType].resources;
+  return state => (
+    state[resourceType].resources
+  );
 }
 
 const resourceSelectors = {};
@@ -53,18 +56,18 @@ export function getResourceMappedList<T: ResourceType, L: string>(
   if (resourceSelectors[resourceType]) {
     return resourceSelectors[`${resourceType}${list}`];
   }
-  resourceSelectors[`${resourceType}${list}`] =
-    createSelector(
-      [
-        getResourceIds(resourceType, list),
-        getResourceMap(resourceType),
-      ],
-      (
-        ids = [],
-        map,
-      ) =>
-        ids.map(id => map[id]),
-    );
+  resourceSelectors[`${resourceType}${list}`] = createSelector(
+    [
+      getResourceIds(resourceType, list),
+      getResourceMap(resourceType),
+    ],
+    (
+      ids = [],
+      map,
+    ) => (
+      ids.map(id => map[id])
+    ),
+  );
   return resourceSelectors[`${resourceType}${list}`];
 }
 
@@ -81,17 +84,18 @@ export function getNestedResourceItem<T: ResourceType, S: Resources>(
     rl: R.keys(resource.relationships).reduce(
       (acc, relationName) => {
         const relT = resource.relationships[relationName];
-        acc[relationName] = Array.isArray(relT.data) ?
+        acc[relationName] = Array.isArray(relT.data) ? (
           relT.data.map(rId => getNestedResourceItem(
             relT.type,
             rId,
             state,
-          )) :
+          ))
+        ) : (
           getNestedResourceItem(
             relT.type,
             relT.data,
             state,
-          );
+          ));
         return acc;
       },
       {},
@@ -129,22 +133,23 @@ export function getResourceNestedMappedList<
     return resourceSelectors[selectorName];
   }
 
-  resourceSelectors[selectorName] =
+  resourceSelectors[selectorName] = (
     // $FlowFixMe it can't be fixed because of reselect definition
     createSelector(
       [
         getResourceIds(resourceType, list),
         ...relDependencies.map(
-          rt =>
-            getResourceMap(rt),
+          rt => (
+            getResourceMap(rt)
+          ),
         ),
       ],
       (
         ids = [],
         ...resourcesMap
-      ) =>
+      ) => (
         (reverse ? R.reverse(ids) : ids).map(
-          id =>
+          id => (
             getNestedResourceItem(
               resourceType,
               id,
@@ -157,9 +162,11 @@ export function getResourceNestedMappedList<
                 {},
               ),
               customAttributesCreator,
-            ),
-        ),
-    );
+            )),
+        )
+      ),
+    )
+  );
   return resourceSelectors[selectorName];
 }
 
@@ -167,6 +174,7 @@ export function getResourceItemBydId<T: ResourceType, I: ID>(
   resourceType: T,
   id: I,
 ): (State) => $ElementType<$PropertyType<$ElementType<State, T>, 'resources'>, I> {
-  return state =>
-    state[resourceType].resources[id] || null;
+  return state => (
+    state[resourceType].resources[id] || null
+  );
 }

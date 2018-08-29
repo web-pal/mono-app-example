@@ -1,0 +1,1566 @@
+{
+  "meta": {
+    "offset": 0,
+    "limit": 8,
+    "rowCount": 190,
+    "pageCount": 24
+  },
+  "included": [
+    {
+      "type": "productsPrices",
+      "id": "2051",
+      "attributes": {
+        "name": "1 item",
+        "price": 5500,
+        "product_id": 938,
+        "productsVariant_id": 5396
+      },
+      "links": {
+        "self": "http://localhost:3001/api/productsPrices/2051"
+      }
+    },
+    {
+      "type": "strainsCategories",
+      "id": "2",
+      "attributes": {
+        "name": "Sativa",
+        "company_id": null,
+        "created_at": "2018-04-27T14:47:27.344Z",
+        "deleted_at": null
+      },
+      "links": {
+        "self": "http://localhost:3001/api/strainsCategories/2"
+      },
+      "relationships": {}
+    },
+    {
+      "type": "productsVariants",
+      "id": "5392",
+      "attributes": {
+        "isRaw": true,
+        "name": "oz",
+        "templateName": null,
+        "weight": 1,
+        "weightUnit": "oz",
+        "product_id": 938,
+        "parent_id": null
+      },
+      "links": {
+        "self": "http://localhost:3001/api/productsVariants/5392"
+      }
+    },
+    {
+      "type": "productsVariants",
+      "id": "5393",
+      "attributes": {
+        "isRaw": true,
+        "name": "g",
+        "templateName": null,
+        "weight": 1,
+        "weightUnit": "g",
+        "product_id": 938,
+        "parent_id": null
+      },
+      "links": {
+        "self": "http://localhost:3001/api/productsVariants/5393"
+      }
+    },
+    {
+      "type": "productsVariants",
+      "id": "5394",
+      "attributes": {
+        "isRaw": true,
+        "name": "lb",
+        "templateName": null,
+        "weight": 1,
+        "weightUnit": "lb",
+        "product_id": 938,
+        "parent_id": null
+      },
+      "links": {
+        "self": "http://localhost:3001/api/productsVariants/5394"
+      }
+    },
+    {
+      "type": "productsVariants",
+      "id": "5395",
+      "attributes": {
+        "isRaw": true,
+        "name": "mg",
+        "templateName": null,
+        "weight": 1,
+        "weightUnit": "mg",
+        "product_id": 938,
+        "parent_id": null
+      },
+      "links": {
+        "self": "http://localhost:3001/api/productsVariants/5395"
+      }
+    },
+    {
+      "type": "productsVariants",
+      "id": "5396",
+      "attributes": {
+        "isRaw": false,
+        "name": "1 item",
+        "templateName": "item",
+        "weight": null,
+        "weightUnit": null,
+        "product_id": 938,
+        "parent_id": null
+      },
+      "links": {
+        "self": "http://localhost:3001/api/productsVariants/5396"
+      }
+    },
+    {
+      "type": "productsSubcategories",
+      "id": "7",
+      "attributes": {
+        "name": "Cartridges",
+        "parent_id": 6,
+        "company_id": null,
+        "created_at": "2018-04-27T14:47:27.344Z",
+        "deleted_at": null
+      },
+      "links": {
+        "self": "http://localhost:3001/api/productsSubcategories/7"
+      }
+    },
+    {
+      "type": "productsPrices",
+      "id": "2048",
+      "attributes": {
+        "name": "1/2 oz",
+        "price": 4900,
+        "product_id": 937,
+        "productsVariant_id": 5391
+      },
+      "links": {
+        "self": "http://localhost:3001/api/productsPrices/2048"
+      }
+    },
+    {
+      "type": "strainsCategories",
+      "id": "3",
+      "attributes": {
+        "name": "Hybrid",
+        "company_id": null,
+        "created_at": "2018-04-27T14:47:27.344Z",
+        "deleted_at": null
+      },
+      "links": {
+        "self": "http://localhost:3001/api/strainsCategories/3"
+      },
+      "relationships": {}
+    },
+    {
+      "type": "productsVariants",
+      "id": "5387",
+      "attributes": {
+        "isRaw": true,
+        "name": "oz",
+        "templateName": null,
+        "weight": 1,
+        "weightUnit": "oz",
+        "product_id": 937,
+        "parent_id": null
+      },
+      "links": {
+        "self": "http://localhost:3001/api/productsVariants/5387"
+      }
+    },
+    {
+      "type": "productsVariants",
+      "id": "5388",
+      "attributes": {
+        "isRaw": true,
+        "name": "g",
+        "templateName": null,
+        "weight": 1,
+        "weightUnit": "g",
+        "product_id": 937,
+        "parent_id": null
+      },
+      "links": {
+        "self": "http://localhost:3001/api/productsVariants/5388"
+      }
+    },
+    {
+      "type": "productsVariants",
+      "id": "5389",
+      "attributes": {
+        "isRaw": true,
+        "name": "lb",
+        "templateName": null,
+        "weight": 1,
+        "weightUnit": "lb",
+        "product_id": 937,
+        "parent_id": null
+      },
+      "links": {
+        "self": "http://localhost:3001/api/productsVariants/5389"
+      }
+    },
+    {
+      "type": "productsVariants",
+      "id": "5390",
+      "attributes": {
+        "isRaw": true,
+        "name": "mg",
+        "templateName": null,
+        "weight": 1,
+        "weightUnit": "mg",
+        "product_id": 937,
+        "parent_id": null
+      },
+      "links": {
+        "self": "http://localhost:3001/api/productsVariants/5390"
+      }
+    },
+    {
+      "type": "productsVariants",
+      "id": "5391",
+      "attributes": {
+        "isRaw": false,
+        "name": "1/2 oz",
+        "templateName": "weight",
+        "weight": 0.5,
+        "weightUnit": "oz",
+        "product_id": 937,
+        "parent_id": null
+      },
+      "links": {
+        "self": "http://localhost:3001/api/productsVariants/5391"
+      }
+    },
+    {
+      "type": "productsSubcategories",
+      "id": "3",
+      "attributes": {
+        "name": "Sungrown",
+        "parent_id": 1,
+        "company_id": null,
+        "created_at": "2018-04-27T14:47:27.344Z",
+        "deleted_at": null
+      },
+      "links": {
+        "self": "http://localhost:3001/api/productsSubcategories/3"
+      },
+      "relationships": {}
+    },
+    {
+      "type": "productsPrices",
+      "id": "2047",
+      "attributes": {
+        "name": "1/2 oz",
+        "price": 9900,
+        "product_id": 936,
+        "productsVariant_id": 5386
+      },
+      "links": {
+        "self": "http://localhost:3001/api/productsPrices/2047"
+      }
+    },
+    {
+      "type": "productsVariants",
+      "id": "5382",
+      "attributes": {
+        "isRaw": true,
+        "name": "oz",
+        "templateName": null,
+        "weight": 1,
+        "weightUnit": "oz",
+        "product_id": 936,
+        "parent_id": null
+      },
+      "links": {
+        "self": "http://localhost:3001/api/productsVariants/5382"
+      }
+    },
+    {
+      "type": "productsVariants",
+      "id": "5383",
+      "attributes": {
+        "isRaw": true,
+        "name": "g",
+        "templateName": null,
+        "weight": 1,
+        "weightUnit": "g",
+        "product_id": 936,
+        "parent_id": null
+      },
+      "links": {
+        "self": "http://localhost:3001/api/productsVariants/5383"
+      }
+    },
+    {
+      "type": "productsVariants",
+      "id": "5384",
+      "attributes": {
+        "isRaw": true,
+        "name": "lb",
+        "templateName": null,
+        "weight": 1,
+        "weightUnit": "lb",
+        "product_id": 936,
+        "parent_id": null
+      },
+      "links": {
+        "self": "http://localhost:3001/api/productsVariants/5384"
+      }
+    },
+    {
+      "type": "productsVariants",
+      "id": "5385",
+      "attributes": {
+        "isRaw": true,
+        "name": "mg",
+        "templateName": null,
+        "weight": 1,
+        "weightUnit": "mg",
+        "product_id": 936,
+        "parent_id": null
+      },
+      "links": {
+        "self": "http://localhost:3001/api/productsVariants/5385"
+      }
+    },
+    {
+      "type": "productsVariants",
+      "id": "5386",
+      "attributes": {
+        "isRaw": false,
+        "name": "1/2 oz",
+        "templateName": "weight",
+        "weight": 0.5,
+        "weightUnit": "oz",
+        "product_id": 936,
+        "parent_id": null
+      },
+      "links": {
+        "self": "http://localhost:3001/api/productsVariants/5386"
+      }
+    },
+    {
+      "type": "productsSubcategories",
+      "id": "2",
+      "attributes": {
+        "name": "Indoor",
+        "parent_id": 1,
+        "company_id": null,
+        "created_at": "2018-04-27T14:47:27.344Z",
+        "deleted_at": null
+      },
+      "links": {
+        "self": "http://localhost:3001/api/productsSubcategories/2"
+      },
+      "relationships": {}
+    },
+    {
+      "type": "productsPrices",
+      "id": "2046",
+      "attributes": {
+        "name": "1/2 oz",
+        "price": 4900,
+        "product_id": 935,
+        "productsVariant_id": 5381
+      },
+      "links": {
+        "self": "http://localhost:3001/api/productsPrices/2046"
+      }
+    },
+    {
+      "type": "productsVariants",
+      "id": "5376",
+      "attributes": {
+        "isRaw": true,
+        "name": "oz",
+        "templateName": null,
+        "weight": 1,
+        "weightUnit": "oz",
+        "product_id": 935,
+        "parent_id": null
+      },
+      "links": {
+        "self": "http://localhost:3001/api/productsVariants/5376"
+      }
+    },
+    {
+      "type": "productsVariants",
+      "id": "5377",
+      "attributes": {
+        "isRaw": true,
+        "name": "g",
+        "templateName": null,
+        "weight": 1,
+        "weightUnit": "g",
+        "product_id": 935,
+        "parent_id": null
+      },
+      "links": {
+        "self": "http://localhost:3001/api/productsVariants/5377"
+      }
+    },
+    {
+      "type": "productsVariants",
+      "id": "5378",
+      "attributes": {
+        "isRaw": true,
+        "name": "lb",
+        "templateName": null,
+        "weight": 1,
+        "weightUnit": "lb",
+        "product_id": 935,
+        "parent_id": null
+      },
+      "links": {
+        "self": "http://localhost:3001/api/productsVariants/5378"
+      }
+    },
+    {
+      "type": "productsVariants",
+      "id": "5379",
+      "attributes": {
+        "isRaw": true,
+        "name": "mg",
+        "templateName": null,
+        "weight": 1,
+        "weightUnit": "mg",
+        "product_id": 935,
+        "parent_id": null
+      },
+      "links": {
+        "self": "http://localhost:3001/api/productsVariants/5379"
+      }
+    },
+    {
+      "type": "productsVariants",
+      "id": "5381",
+      "attributes": {
+        "isRaw": false,
+        "name": "1/2 oz",
+        "templateName": "weight",
+        "weight": 0.5,
+        "weightUnit": "oz",
+        "product_id": 935,
+        "parent_id": null
+      },
+      "links": {
+        "self": "http://localhost:3001/api/productsVariants/5381"
+      }
+    },
+    {
+      "type": "productsPrices",
+      "id": "2039",
+      "attributes": {
+        "name": "1/2 oz",
+        "price": 4900,
+        "product_id": 934,
+        "productsVariant_id": 5373
+      },
+      "links": {
+        "self": "http://localhost:3001/api/productsPrices/2039"
+      }
+    },
+    {
+      "type": "strainsCategories",
+      "id": "1",
+      "attributes": {
+        "name": "Indica",
+        "company_id": null,
+        "created_at": "2018-04-27T14:47:27.344Z",
+        "deleted_at": null
+      },
+      "links": {
+        "self": "http://localhost:3001/api/strainsCategories/1"
+      },
+      "relationships": {}
+    },
+    {
+      "type": "productsVariants",
+      "id": "5368",
+      "attributes": {
+        "isRaw": true,
+        "name": "oz",
+        "templateName": null,
+        "weight": 1,
+        "weightUnit": "oz",
+        "product_id": 934,
+        "parent_id": null
+      },
+      "links": {
+        "self": "http://localhost:3001/api/productsVariants/5368"
+      }
+    },
+    {
+      "type": "productsVariants",
+      "id": "5369",
+      "attributes": {
+        "isRaw": true,
+        "name": "g",
+        "templateName": null,
+        "weight": 1,
+        "weightUnit": "g",
+        "product_id": 934,
+        "parent_id": null
+      },
+      "links": {
+        "self": "http://localhost:3001/api/productsVariants/5369"
+      }
+    },
+    {
+      "type": "productsVariants",
+      "id": "5370",
+      "attributes": {
+        "isRaw": true,
+        "name": "lb",
+        "templateName": null,
+        "weight": 1,
+        "weightUnit": "lb",
+        "product_id": 934,
+        "parent_id": null
+      },
+      "links": {
+        "self": "http://localhost:3001/api/productsVariants/5370"
+      }
+    },
+    {
+      "type": "productsVariants",
+      "id": "5371",
+      "attributes": {
+        "isRaw": true,
+        "name": "mg",
+        "templateName": null,
+        "weight": 1,
+        "weightUnit": "mg",
+        "product_id": 934,
+        "parent_id": null
+      },
+      "links": {
+        "self": "http://localhost:3001/api/productsVariants/5371"
+      }
+    },
+    {
+      "type": "productsVariants",
+      "id": "5372",
+      "attributes": {
+        "isRaw": false,
+        "name": "1 g",
+        "templateName": "weight",
+        "weight": 1,
+        "weightUnit": "g",
+        "product_id": 934,
+        "parent_id": null
+      },
+      "links": {
+        "self": "http://localhost:3001/api/productsVariants/5372"
+      }
+    },
+    {
+      "type": "productsVariants",
+      "id": "5373",
+      "attributes": {
+        "isRaw": false,
+        "name": "1/2 oz",
+        "templateName": "weight",
+        "weight": 0.5,
+        "weightUnit": "oz",
+        "product_id": 934,
+        "parent_id": null
+      },
+      "links": {
+        "self": "http://localhost:3001/api/productsVariants/5373"
+      }
+    },
+    {
+      "type": "productsPrices",
+      "id": "2049",
+      "attributes": {
+        "name": "1 item",
+        "price": 900,
+        "product_id": 932,
+        "productsVariant_id": 5374
+      },
+      "links": {
+        "self": "http://localhost:3001/api/productsPrices/2049"
+      }
+    },
+    {
+      "type": "productsVariants",
+      "id": "5358",
+      "attributes": {
+        "isRaw": true,
+        "name": "oz",
+        "templateName": null,
+        "weight": 1,
+        "weightUnit": "oz",
+        "product_id": 932,
+        "parent_id": null
+      },
+      "links": {
+        "self": "http://localhost:3001/api/productsVariants/5358"
+      }
+    },
+    {
+      "type": "productsVariants",
+      "id": "5359",
+      "attributes": {
+        "isRaw": true,
+        "name": "g",
+        "templateName": null,
+        "weight": 1,
+        "weightUnit": "g",
+        "product_id": 932,
+        "parent_id": null
+      },
+      "links": {
+        "self": "http://localhost:3001/api/productsVariants/5359"
+      }
+    },
+    {
+      "type": "productsVariants",
+      "id": "5360",
+      "attributes": {
+        "isRaw": true,
+        "name": "lb",
+        "templateName": null,
+        "weight": 1,
+        "weightUnit": "lb",
+        "product_id": 932,
+        "parent_id": null
+      },
+      "links": {
+        "self": "http://localhost:3001/api/productsVariants/5360"
+      }
+    },
+    {
+      "type": "productsVariants",
+      "id": "5361",
+      "attributes": {
+        "isRaw": true,
+        "name": "mg",
+        "templateName": null,
+        "weight": 1,
+        "weightUnit": "mg",
+        "product_id": 932,
+        "parent_id": null
+      },
+      "links": {
+        "self": "http://localhost:3001/api/productsVariants/5361"
+      }
+    },
+    {
+      "type": "productsVariants",
+      "id": "5374",
+      "attributes": {
+        "isRaw": false,
+        "name": "1 item",
+        "templateName": "item",
+        "weight": null,
+        "weightUnit": null,
+        "product_id": 932,
+        "parent_id": null
+      },
+      "links": {
+        "self": "http://localhost:3001/api/productsVariants/5374"
+      }
+    },
+    {
+      "type": "productsSubcategories",
+      "id": "25",
+      "attributes": {
+        "name": "Candy",
+        "parent_id": 22,
+        "company_id": null,
+        "created_at": "2018-04-27T14:47:27.344Z",
+        "deleted_at": null
+      },
+      "links": {
+        "self": "http://localhost:3001/api/productsSubcategories/25"
+      }
+    },
+    {
+      "type": "productsPrices",
+      "id": "2030",
+      "attributes": {
+        "name": "1/2 oz",
+        "price": 9900,
+        "product_id": 930,
+        "productsVariant_id": 5350
+      },
+      "links": {
+        "self": "http://localhost:3001/api/productsPrices/2030"
+      }
+    },
+    {
+      "type": "productsVariants",
+      "id": "5344",
+      "attributes": {
+        "isRaw": true,
+        "name": "oz",
+        "templateName": null,
+        "weight": 1,
+        "weightUnit": "oz",
+        "product_id": 930,
+        "parent_id": null
+      },
+      "links": {
+        "self": "http://localhost:3001/api/productsVariants/5344"
+      }
+    },
+    {
+      "type": "productsVariants",
+      "id": "5345",
+      "attributes": {
+        "isRaw": true,
+        "name": "g",
+        "templateName": null,
+        "weight": 1,
+        "weightUnit": "g",
+        "product_id": 930,
+        "parent_id": null
+      },
+      "links": {
+        "self": "http://localhost:3001/api/productsVariants/5345"
+      }
+    },
+    {
+      "type": "productsVariants",
+      "id": "5346",
+      "attributes": {
+        "isRaw": true,
+        "name": "lb",
+        "templateName": null,
+        "weight": 1,
+        "weightUnit": "lb",
+        "product_id": 930,
+        "parent_id": null
+      },
+      "links": {
+        "self": "http://localhost:3001/api/productsVariants/5346"
+      }
+    },
+    {
+      "type": "productsVariants",
+      "id": "5347",
+      "attributes": {
+        "isRaw": true,
+        "name": "mg",
+        "templateName": null,
+        "weight": 1,
+        "weightUnit": "mg",
+        "product_id": 930,
+        "parent_id": null
+      },
+      "links": {
+        "self": "http://localhost:3001/api/productsVariants/5347"
+      }
+    },
+    {
+      "type": "productsVariants",
+      "id": "5350",
+      "attributes": {
+        "isRaw": false,
+        "name": "1/2 oz",
+        "templateName": "weight",
+        "weight": 0.5,
+        "weightUnit": "oz",
+        "product_id": 930,
+        "parent_id": null
+      },
+      "links": {
+        "self": "http://localhost:3001/api/productsVariants/5350"
+      }
+    },
+    {
+      "type": "productsPrices",
+      "id": "2043",
+      "attributes": {
+        "name": "1/2 oz",
+        "price": 9900,
+        "product_id": 929,
+        "productsVariant_id": 5349
+      },
+      "links": {
+        "self": "http://localhost:3001/api/productsPrices/2043"
+      }
+    },
+    {
+      "type": "productsPrices",
+      "id": "2050",
+      "attributes": {
+        "name": "1 g",
+        "price": 100,
+        "product_id": 929,
+        "productsVariant_id": 5375
+      },
+      "links": {
+        "self": "http://localhost:3001/api/productsPrices/2050"
+      }
+    },
+    {
+      "type": "productsVariants",
+      "id": "5339",
+      "attributes": {
+        "isRaw": true,
+        "name": "oz",
+        "templateName": null,
+        "weight": 1,
+        "weightUnit": "oz",
+        "product_id": 929,
+        "parent_id": null
+      },
+      "links": {
+        "self": "http://localhost:3001/api/productsVariants/5339"
+      }
+    },
+    {
+      "type": "productsVariants",
+      "id": "5340",
+      "attributes": {
+        "isRaw": true,
+        "name": "g",
+        "templateName": null,
+        "weight": 1,
+        "weightUnit": "g",
+        "product_id": 929,
+        "parent_id": null
+      },
+      "links": {
+        "self": "http://localhost:3001/api/productsVariants/5340"
+      }
+    },
+    {
+      "type": "productsVariants",
+      "id": "5341",
+      "attributes": {
+        "isRaw": true,
+        "name": "lb",
+        "templateName": null,
+        "weight": 1,
+        "weightUnit": "lb",
+        "product_id": 929,
+        "parent_id": null
+      },
+      "links": {
+        "self": "http://localhost:3001/api/productsVariants/5341"
+      }
+    },
+    {
+      "type": "productsVariants",
+      "id": "5342",
+      "attributes": {
+        "isRaw": true,
+        "name": "mg",
+        "templateName": null,
+        "weight": 1,
+        "weightUnit": "mg",
+        "product_id": 929,
+        "parent_id": null
+      },
+      "links": {
+        "self": "http://localhost:3001/api/productsVariants/5342"
+      }
+    },
+    {
+      "type": "productsVariants",
+      "id": "5349",
+      "attributes": {
+        "isRaw": false,
+        "name": "1/2 oz",
+        "templateName": "weight",
+        "weight": 0.5,
+        "weightUnit": "oz",
+        "product_id": 929,
+        "parent_id": null
+      },
+      "links": {
+        "self": "http://localhost:3001/api/productsVariants/5349"
+      }
+    },
+    {
+      "type": "productsVariants",
+      "id": "5375",
+      "attributes": {
+        "isRaw": false,
+        "name": "1 g",
+        "templateName": "weight",
+        "weight": 1,
+        "weightUnit": "g",
+        "product_id": 929,
+        "parent_id": null
+      },
+      "links": {
+        "self": "http://localhost:3001/api/productsVariants/5375"
+      }
+    }
+  ],
+  "links": {
+    "self": "http://localhost:3001/api/products"
+  },
+  "data": [
+    {
+      "type": "products",
+      "id": "938",
+      "links": {
+        "self": "http://localhost:3001/api/products/938"
+      },
+      "attributes": {
+        "name": "*Brite Labs Sour Diesel Pax Pod(S)",
+        "description": null,
+        "pictures": null,
+        "company_id": 2,
+        "productsSubcategories_id": 7,
+        "strainsCategory_id": 2,
+        "deleted_at": null,
+        "restrictForGlobal": true,
+        "restrictForLocal": true
+      },
+      "relationships": {
+        "productsPrices": {
+          "data": [
+            {
+              "type": "productsPrices",
+              "id": "2051"
+            }
+          ],
+          "links": {
+            "self": "http://localhost:3001/api/products/938/relationships/productsPrices",
+            "related": "http://localhost:3001/api/products/938/productsPrices"
+          }
+        },
+        "strainsCategory": {
+          "data": {
+            "type": "strainsCategories",
+            "id": "2"
+          },
+          "links": {
+            "self": "http://localhost:3001/api/products/938/relationships/strainsCategory",
+            "related": "http://localhost:3001/api/products/938/strainsCategory"
+          }
+        },
+        "productsVariants": {
+          "data": [
+            {
+              "type": "productsVariants",
+              "id": "5392"
+            },
+            {
+              "type": "productsVariants",
+              "id": "5393"
+            },
+            {
+              "type": "productsVariants",
+              "id": "5394"
+            },
+            {
+              "type": "productsVariants",
+              "id": "5395"
+            },
+            {
+              "type": "productsVariants",
+              "id": "5396"
+            }
+          ],
+          "links": {
+            "self": "http://localhost:3001/api/products/938/relationships/productsVariants",
+            "related": "http://localhost:3001/api/products/938/productsVariants"
+          }
+        },
+        "productsSubcategories": {
+          "data": {
+            "type": "productsSubcategories",
+            "id": "7"
+          },
+          "links": {
+            "self": "http://localhost:3001/api/products/938/relationships/productsSubcategories",
+            "related": "http://localhost:3001/api/products/938/productsSubcategories"
+          }
+        }
+      }
+    },
+    {
+      "type": "products",
+      "id": "937",
+      "links": {
+        "self": "http://localhost:3001/api/products/937"
+      },
+      "attributes": {
+        "name": "*Lemon OG Sungrown Special",
+        "description": "Lemon OG is a sativa dominant hybrid strains with a genetic lineage of Sour Diesel, Strawberry Diesel, and NYC Diesel. The strain is perfect for depression, inflammation, migraines, and nausea.",
+        "pictures": null,
+        "company_id": 2,
+        "productsSubcategories_id": 3,
+        "strainsCategory_id": 3,
+        "deleted_at": null,
+        "restrictForGlobal": true,
+        "restrictForLocal": true
+      },
+      "relationships": {
+        "productsPrices": {
+          "data": [
+            {
+              "type": "productsPrices",
+              "id": "2048"
+            }
+          ],
+          "links": {
+            "self": "http://localhost:3001/api/products/937/relationships/productsPrices",
+            "related": "http://localhost:3001/api/products/937/productsPrices"
+          }
+        },
+        "strainsCategory": {
+          "data": {
+            "type": "strainsCategories",
+            "id": "3"
+          },
+          "links": {
+            "self": "http://localhost:3001/api/products/937/relationships/strainsCategory",
+            "related": "http://localhost:3001/api/products/937/strainsCategory"
+          }
+        },
+        "productsVariants": {
+          "data": [
+            {
+              "type": "productsVariants",
+              "id": "5387"
+            },
+            {
+              "type": "productsVariants",
+              "id": "5388"
+            },
+            {
+              "type": "productsVariants",
+              "id": "5389"
+            },
+            {
+              "type": "productsVariants",
+              "id": "5390"
+            },
+            {
+              "type": "productsVariants",
+              "id": "5391"
+            }
+          ],
+          "links": {
+            "self": "http://localhost:3001/api/products/937/relationships/productsVariants",
+            "related": "http://localhost:3001/api/products/937/productsVariants"
+          }
+        },
+        "productsSubcategories": {
+          "data": {
+            "type": "productsSubcategories",
+            "id": "3"
+          },
+          "links": {
+            "self": "http://localhost:3001/api/products/937/relationships/productsSubcategories",
+            "related": "http://localhost:3001/api/products/937/productsSubcategories"
+          }
+        }
+      }
+    },
+    {
+      "type": "products",
+      "id": "936",
+      "links": {
+        "self": "http://localhost:3001/api/products/936"
+      },
+      "attributes": {
+        "name": "*Blue Dynamite Exotic (S)",
+        "description": "Blue Dynamite is hybrid dominant strain, 50% indica and 50% sativa with a genetic lineage of Avalon and Dynamite. The strains is perect or pain, nausea, sleeplessness, and migrains.",
+        "pictures": null,
+        "company_id": 2,
+        "productsSubcategories_id": 2,
+        "strainsCategory_id": 2,
+        "deleted_at": null,
+        "restrictForGlobal": true,
+        "restrictForLocal": true
+      },
+      "relationships": {
+        "productsPrices": {
+          "data": [
+            {
+              "type": "productsPrices",
+              "id": "2047"
+            }
+          ],
+          "links": {
+            "self": "http://localhost:3001/api/products/936/relationships/productsPrices",
+            "related": "http://localhost:3001/api/products/936/productsPrices"
+          }
+        },
+        "strainsCategory": {
+          "data": {
+            "type": "strainsCategories",
+            "id": "2"
+          },
+          "links": {
+            "self": "http://localhost:3001/api/products/936/relationships/strainsCategory",
+            "related": "http://localhost:3001/api/products/936/strainsCategory"
+          }
+        },
+        "productsVariants": {
+          "data": [
+            {
+              "type": "productsVariants",
+              "id": "5382"
+            },
+            {
+              "type": "productsVariants",
+              "id": "5383"
+            },
+            {
+              "type": "productsVariants",
+              "id": "5384"
+            },
+            {
+              "type": "productsVariants",
+              "id": "5385"
+            },
+            {
+              "type": "productsVariants",
+              "id": "5386"
+            }
+          ],
+          "links": {
+            "self": "http://localhost:3001/api/products/936/relationships/productsVariants",
+            "related": "http://localhost:3001/api/products/936/productsVariants"
+          }
+        },
+        "productsSubcategories": {
+          "data": {
+            "type": "productsSubcategories",
+            "id": "2"
+          },
+          "links": {
+            "self": "http://localhost:3001/api/products/936/relationships/productsSubcategories",
+            "related": "http://localhost:3001/api/products/936/productsSubcategories"
+          }
+        }
+      }
+    },
+    {
+      "type": "products",
+      "id": "935",
+      "links": {
+        "self": "http://localhost:3001/api/products/935"
+      },
+      "attributes": {
+        "name": "*Alien OG Special(H)",
+        "description": "Alien OG is a hybrid dominant strain, 50% indica and 50% sativa with a genetic lineage of Tahoe OG and Alien Kush. The strains is perfect to relieve stress, migraines, pain, anxiety, and insomnia.",
+        "pictures": [
+          "https://delivermd.s3.us-west-1.amazonaws.com/uploads/52f9535c-481f-4c9a-bba4-7b1d8bfb1e42_AlienOG.jpg"
+        ],
+        "company_id": 2,
+        "productsSubcategories_id": 3,
+        "strainsCategory_id": 3,
+        "deleted_at": null,
+        "restrictForGlobal": true,
+        "restrictForLocal": true
+      },
+      "relationships": {
+        "productsPrices": {
+          "data": [
+            {
+              "type": "productsPrices",
+              "id": "2046"
+            }
+          ],
+          "links": {
+            "self": "http://localhost:3001/api/products/935/relationships/productsPrices",
+            "related": "http://localhost:3001/api/products/935/productsPrices"
+          }
+        },
+        "strainsCategory": {
+          "data": {
+            "type": "strainsCategories",
+            "id": "3"
+          },
+          "links": {
+            "self": "http://localhost:3001/api/products/935/relationships/strainsCategory",
+            "related": "http://localhost:3001/api/products/935/strainsCategory"
+          }
+        },
+        "productsVariants": {
+          "data": [
+            {
+              "type": "productsVariants",
+              "id": "5376"
+            },
+            {
+              "type": "productsVariants",
+              "id": "5377"
+            },
+            {
+              "type": "productsVariants",
+              "id": "5378"
+            },
+            {
+              "type": "productsVariants",
+              "id": "5379"
+            },
+            {
+              "type": "productsVariants",
+              "id": "5381"
+            }
+          ],
+          "links": {
+            "self": "http://localhost:3001/api/products/935/relationships/productsVariants",
+            "related": "http://localhost:3001/api/products/935/productsVariants"
+          }
+        },
+        "productsSubcategories": {
+          "data": {
+            "type": "productsSubcategories",
+            "id": "3"
+          },
+          "links": {
+            "self": "http://localhost:3001/api/products/935/relationships/productsSubcategories",
+            "related": "http://localhost:3001/api/products/935/productsSubcategories"
+          }
+        }
+      }
+    },
+    {
+      "type": "products",
+      "id": "934",
+      "links": {
+        "self": "http://localhost:3001/api/products/934"
+      },
+      "attributes": {
+        "name": "*Mr Nice Special (I)",
+        "description": "Mr Nice is an indica dominant hybrid strain it's genetic lineage are G13 and Hash Plant. The strains is perfect for depression, headaches, insomnia, stress, and anxiety. The perfect strain to help calm and aid in relaxing.",
+        "pictures": [
+          "https://delivermd.s3.us-west-1.amazonaws.com/uploads/93969826-4e2d-4d1e-9135-f2c99ce5604a_MrNiceSpecial.JPG"
+        ],
+        "company_id": 2,
+        "productsSubcategories_id": 3,
+        "strainsCategory_id": 1,
+        "deleted_at": null,
+        "restrictForGlobal": true,
+        "restrictForLocal": true
+      },
+      "relationships": {
+        "productsPrices": {
+          "data": [
+            {
+              "type": "productsPrices",
+              "id": "2039"
+            }
+          ],
+          "links": {
+            "self": "http://localhost:3001/api/products/934/relationships/productsPrices",
+            "related": "http://localhost:3001/api/products/934/productsPrices"
+          }
+        },
+        "strainsCategory": {
+          "data": {
+            "type": "strainsCategories",
+            "id": "1"
+          },
+          "links": {
+            "self": "http://localhost:3001/api/products/934/relationships/strainsCategory",
+            "related": "http://localhost:3001/api/products/934/strainsCategory"
+          }
+        },
+        "productsVariants": {
+          "data": [
+            {
+              "type": "productsVariants",
+              "id": "5368"
+            },
+            {
+              "type": "productsVariants",
+              "id": "5369"
+            },
+            {
+              "type": "productsVariants",
+              "id": "5370"
+            },
+            {
+              "type": "productsVariants",
+              "id": "5371"
+            },
+            {
+              "type": "productsVariants",
+              "id": "5372"
+            },
+            {
+              "type": "productsVariants",
+              "id": "5373"
+            }
+          ],
+          "links": {
+            "self": "http://localhost:3001/api/products/934/relationships/productsVariants",
+            "related": "http://localhost:3001/api/products/934/productsVariants"
+          }
+        },
+        "productsSubcategories": {
+          "data": {
+            "type": "productsSubcategories",
+            "id": "3"
+          },
+          "links": {
+            "self": "http://localhost:3001/api/products/934/relationships/productsSubcategories",
+            "related": "http://localhost:3001/api/products/934/productsSubcategories"
+          }
+        }
+      }
+    },
+    {
+      "type": "products",
+      "id": "932",
+      "links": {
+        "self": "http://localhost:3001/api/products/932"
+      },
+      "attributes": {
+        "name": "*50mg Gummies",
+        "description": "Five individually pieces of gummies. At 10mg a piece it is perfectly dosed to get the right amount of THC.",
+        "pictures": [
+          "https://delivermd.s3.us-west-1.amazonaws.com/uploads/05fd37ff-f8ec-41f8-a07d-92b9887a22af_50MGGummy.jpg"
+        ],
+        "company_id": 2,
+        "productsSubcategories_id": 25,
+        "strainsCategory_id": 3,
+        "deleted_at": null,
+        "restrictForGlobal": true,
+        "restrictForLocal": true
+      },
+      "relationships": {
+        "productsPrices": {
+          "data": [
+            {
+              "type": "productsPrices",
+              "id": "2049"
+            }
+          ],
+          "links": {
+            "self": "http://localhost:3001/api/products/932/relationships/productsPrices",
+            "related": "http://localhost:3001/api/products/932/productsPrices"
+          }
+        },
+        "strainsCategory": {
+          "data": {
+            "type": "strainsCategories",
+            "id": "3"
+          },
+          "links": {
+            "self": "http://localhost:3001/api/products/932/relationships/strainsCategory",
+            "related": "http://localhost:3001/api/products/932/strainsCategory"
+          }
+        },
+        "productsVariants": {
+          "data": [
+            {
+              "type": "productsVariants",
+              "id": "5358"
+            },
+            {
+              "type": "productsVariants",
+              "id": "5359"
+            },
+            {
+              "type": "productsVariants",
+              "id": "5360"
+            },
+            {
+              "type": "productsVariants",
+              "id": "5361"
+            },
+            {
+              "type": "productsVariants",
+              "id": "5374"
+            }
+          ],
+          "links": {
+            "self": "http://localhost:3001/api/products/932/relationships/productsVariants",
+            "related": "http://localhost:3001/api/products/932/productsVariants"
+          }
+        },
+        "productsSubcategories": {
+          "data": {
+            "type": "productsSubcategories",
+            "id": "25"
+          },
+          "links": {
+            "self": "http://localhost:3001/api/products/932/relationships/productsSubcategories",
+            "related": "http://localhost:3001/api/products/932/productsSubcategories"
+          }
+        }
+      }
+    },
+    {
+      "type": "products",
+      "id": "930",
+      "links": {
+        "self": "http://localhost:3001/api/products/930"
+      },
+      "attributes": {
+        "name": "*Purple Dynamite",
+        "description": "Purple Dynamite is a indica dominant strain, with a genetic lineage of purple kush and dynamite. The strains is perfect for anxiety, chronic pain, and for loss of appetite.",
+        "pictures": [
+          "https://delivermd.s3.us-west-1.amazonaws.com/uploads/1cfdee61-3703-488b-8059-a442e7a9f6b2_PurpleDynamite.jpg"
+        ],
+        "company_id": 2,
+        "productsSubcategories_id": 2,
+        "strainsCategory_id": 1,
+        "deleted_at": null,
+        "restrictForGlobal": true,
+        "restrictForLocal": true
+      },
+      "relationships": {
+        "productsPrices": {
+          "data": [
+            {
+              "type": "productsPrices",
+              "id": "2030"
+            }
+          ],
+          "links": {
+            "self": "http://localhost:3001/api/products/930/relationships/productsPrices",
+            "related": "http://localhost:3001/api/products/930/productsPrices"
+          }
+        },
+        "strainsCategory": {
+          "data": {
+            "type": "strainsCategories",
+            "id": "1"
+          },
+          "links": {
+            "self": "http://localhost:3001/api/products/930/relationships/strainsCategory",
+            "related": "http://localhost:3001/api/products/930/strainsCategory"
+          }
+        },
+        "productsVariants": {
+          "data": [
+            {
+              "type": "productsVariants",
+              "id": "5344"
+            },
+            {
+              "type": "productsVariants",
+              "id": "5345"
+            },
+            {
+              "type": "productsVariants",
+              "id": "5346"
+            },
+            {
+              "type": "productsVariants",
+              "id": "5347"
+            },
+            {
+              "type": "productsVariants",
+              "id": "5350"
+            }
+          ],
+          "links": {
+            "self": "http://localhost:3001/api/products/930/relationships/productsVariants",
+            "related": "http://localhost:3001/api/products/930/productsVariants"
+          }
+        },
+        "productsSubcategories": {
+          "data": {
+            "type": "productsSubcategories",
+            "id": "2"
+          },
+          "links": {
+            "self": "http://localhost:3001/api/products/930/relationships/productsSubcategories",
+            "related": "http://localhost:3001/api/products/930/productsSubcategories"
+          }
+        }
+      }
+    },
+    {
+      "type": "products",
+      "id": "929",
+      "links": {
+        "self": "http://localhost:3001/api/products/929"
+      },
+      "attributes": {
+        "name": "*Jillybean Exotics",
+        "description": "Jillybean is a sativa dominant hybrid strains, with a genetic lineage of Orange Velvet and Space Queen. The strains is perfect for pain, depression, stress, and nausea.",
+        "pictures": [
+          "https://delivermd.s3.us-west-1.amazonaws.com/uploads/493620fb-976f-4a0b-b730-8f073510947a_JillyBean.jpg"
+        ],
+        "company_id": 2,
+        "productsSubcategories_id": 2,
+        "strainsCategory_id": 3,
+        "deleted_at": null,
+        "restrictForGlobal": true,
+        "restrictForLocal": true
+      },
+      "relationships": {
+        "productsPrices": {
+          "data": [
+            {
+              "type": "productsPrices",
+              "id": "2043"
+            },
+            {
+              "type": "productsPrices",
+              "id": "2050"
+            }
+          ],
+          "links": {
+            "self": "http://localhost:3001/api/products/929/relationships/productsPrices",
+            "related": "http://localhost:3001/api/products/929/productsPrices"
+          }
+        },
+        "strainsCategory": {
+          "data": {
+            "type": "strainsCategories",
+            "id": "3"
+          },
+          "links": {
+            "self": "http://localhost:3001/api/products/929/relationships/strainsCategory",
+            "related": "http://localhost:3001/api/products/929/strainsCategory"
+          }
+        },
+        "productsVariants": {
+          "data": [
+            {
+              "type": "productsVariants",
+              "id": "5339"
+            },
+            {
+              "type": "productsVariants",
+              "id": "5340"
+            },
+            {
+              "type": "productsVariants",
+              "id": "5341"
+            },
+            {
+              "type": "productsVariants",
+              "id": "5342"
+            },
+            {
+              "type": "productsVariants",
+              "id": "5349"
+            },
+            {
+              "type": "productsVariants",
+              "id": "5375"
+            }
+          ],
+          "links": {
+            "self": "http://localhost:3001/api/products/929/relationships/productsVariants",
+            "related": "http://localhost:3001/api/products/929/productsVariants"
+          }
+        },
+        "productsSubcategories": {
+          "data": {
+            "type": "productsSubcategories",
+            "id": "2"
+          },
+          "links": {
+            "self": "http://localhost:3001/api/products/929/relationships/productsSubcategories",
+            "related": "http://localhost:3001/api/products/929/productsSubcategories"
+          }
+        }
+      }
+    }
+  ]
+}

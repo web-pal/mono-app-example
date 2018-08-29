@@ -8,6 +8,7 @@ import type {
 export function getUiState<UK: UiStateKey>(
   key: UK,
 ): (State) => $ElementType<$PropertyType<State, 'ui'>, UK> {
-  return state =>
-    state.ui[key];
+  return state => (
+    state.ui[key]
+  );
 }

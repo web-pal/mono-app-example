@@ -58,4 +58,3 @@ export type ResourcesAction =
     requestKey: string,
     list: string,
   |};
-

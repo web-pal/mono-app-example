@@ -6,7 +6,7 @@ import type {
 
 import {
   actionTypes,
-} from '../actions';
+} from '.';
 
 
 export const fetchResourcesRequest = ({

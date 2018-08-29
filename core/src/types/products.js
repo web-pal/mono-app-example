@@ -31,4 +31,3 @@ export type ProductResource = {
     productsVariants: Array<ProductsVariantResource>,
   },
 };
-
