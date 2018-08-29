@@ -1,6 +1,27 @@
 # mono-web-example
 
-Example web project with [yarn workspaces][yarn-workspaces].
+Jump to:
+
+- [Benefits of workspaces](#benefits-of-workspaces)
+- [Built With](#built-with)
+- [Developing](#developing)
+- [Structure](#structure)
+- [Transpiling/Babel](#transpilingbabel)
+- [Code linting](#code-linting)
+- [Flow, static type checking](#flow-static-type-checking)
+- [State architecture](#state-architecture)
+- [Containers and Components](#containers-and-components)
+- [Actions](#actions)
+- [Selectors/Reselect](#selectorsreselect)
+- [Reducers](#reducers)
+- [Sagas](#sagas)
+- [Git flow](#git-flow)
+- [Commit message](#commit-message)
+- [Contributing](#contributing)
+- [Preparing a good PR](#preparing-a-good-pr)
+- [IDE integration](#ide-integration)
+
+
 
 ## Benefits of workspaces
 * Your dependencies can be linked together, which means that your workspaces can depend on one
@@ -14,6 +35,7 @@ which means less conflicts and easier reviews.
 * Shared flowconfig and flow-typed
 * Easy IDE integrations, since we don't have multiple root dirs in the project
 
+Example web project with [yarn workspaces][yarn-workspaces].
 ## Built With
 
 * [yarn-workspaces][yarn-workspaces] - It allows you to setup multiple packages
