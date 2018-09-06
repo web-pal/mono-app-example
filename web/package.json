@@ -3,7 +3,8 @@
   "private": true,
   "version": "1.0.0",
   "scripts": {
-    "start": "webpack-dev-server --config webpack.config.development.js"
+    "start": "webpack-dev-server --open --color --env.NODE_ENV=development --config webpack.config.development.js",
+    "storybook": "start-storybook -p 9001 -c .storybook"
   },
   "dependencies": {
     "@babel/polyfill": "7.0.0",
@@ -29,6 +30,7 @@
     "@babel/preset-env": "7.0.0",
     "@babel/preset-flow": "7.0.0",
     "@babel/preset-react": "7.0.0",
+    "@storybook/react": "4.0.0-alpha.18",
     "babel-loader": "8.0.0-beta.4",
     "babel-plugin-import": "1.8.0",
     "babel-plugin-styled-components": "1.5.1",

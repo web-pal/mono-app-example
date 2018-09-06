@@ -7,6 +7,8 @@ import {
   defaultResourceInclude,
 } from '../constants';
 
+import mocks from '../mocks';
+
 type ApiResponse = {
   data: Array<any>,
   included: Array<any>,
@@ -47,6 +49,7 @@ export function fetchResourcesApi({
   include: Array<string>,
   fields: Array<string>,
 }): Promise<ApiResponse> {
+  /*
   const requestData = {
     withDeleted,
     page,
@@ -60,7 +63,7 @@ export function fetchResourcesApi({
     ),
     fields,
   };
-  const apiUrl = 'https://api-stage.delivermd.com/api';
+  //  const apiUrl = 'https://api-stage.delivermd.com/api';
   return fetch(
     `${apiUrl}/${resourceType}/marketplace/filter`,
     {
@@ -77,4 +80,6 @@ export function fetchResourcesApi({
     }
     throw new Error(response);
   });
+  */
+  return Promise.resolve(mocks);
 }
