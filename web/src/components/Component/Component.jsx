@@ -1,9 +1,5 @@
 // @flow
 import React from 'react';
-import {
-  connect,
-} from 'react-redux';
-
 
 type Props = {
   initialState: any,
@@ -14,7 +10,7 @@ type Props = {
   children?: React.Node,
 };
 
-class ConnectWithLifeCycle extends React.Component<Props> {
+class Component extends React.Component<Props> {
   constructor(props) {
     super(props);
     this.state = props.initialState || {};
@@ -24,12 +20,19 @@ class ConnectWithLifeCycle extends React.Component<Props> {
           (
             handlers,
             handlerName,
-          ) => {
-            handlers[handlerName] = args => ( // eslint-disable-line
-              props.handlers[handlerName](this.props)(args)
-            );
-            return handlers;
-          },
+          ) => ({
+            ...handlers,
+            [handlerName]: args => (
+              props.handlers[handlerName]({
+                props: this.props,
+                state: this.state,
+                setState: this.setState.bind(this),
+                getState: () => this.state,
+                ref: this.component,
+                handlers,
+              })(args)
+            ),
+          }),
           {},
         )
     );
@@ -38,7 +41,12 @@ class ConnectWithLifeCycle extends React.Component<Props> {
   componentDidMount() {
     const { componentDidMount } = this.props;
     if (componentDidMount) {
-      componentDidMount(this.props);
+      componentDidMount({
+        props: this.props,
+        state: this.state,
+        setState: this.setState.bind(this),
+        ref: this.component,
+      });
     }
   }
 
@@ -66,7 +74,9 @@ class ConnectWithLifeCycle extends React.Component<Props> {
       this.props,
       {
         handlers: this.handlers,
-        setState: (updater, callback) => this.setState(updater, callback),
+        setState: (updater, callback) => (
+          this.setState(updater, callback)
+        ),
         state: this.state,
         ref: el => this.component = el, // eslint-disable-line
       },
@@ -74,18 +84,11 @@ class ConnectWithLifeCycle extends React.Component<Props> {
   }
 }
 
-ConnectWithLifeCycle.defaultProps = {
+Component.defaultProps = {
   componentDidMount: null,
   componentWillUpdate: null,
   componentWillUnmount: null,
   children: null,
 };
 
-export default connect(
-  (state, { mapStateToProps, ...props }) => (
-    mapStateToProps ? mapStateToProps(state, props) : {}
-  ),
-  dispatch => ({
-    dispatch,
-  }),
-)(ConnectWithLifeCycle);
+export default Component;
