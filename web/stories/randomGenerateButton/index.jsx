@@ -9,13 +9,13 @@ import {
   getUiState,
 } from 'core/src/selectors/index';
 
-import Connect from '../../src/components/Connect/index';
-import ExampleComponent from '../../src/components/ExampleComponent/ExampleComponent';
+import Component from 'web-components/ConnectComponent';
+import ExampleComponent from 'web-components/ExampleComponent';
 
 
 storiesOf('generate-random-button', module)
   .add('random-button-default', () => (
-    <Connect
+    <Component
       mapStateToProps={
         state => ({
           randomString: getUiState('randomString')(state),
@@ -30,5 +30,5 @@ storiesOf('generate-random-button', module)
         )
       } />
       )}
-    </Connect>
+    </Component>
   ));

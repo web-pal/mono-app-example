@@ -12,12 +12,20 @@ import {
   Table,
   Icon,
 } from 'antd';
-import Placeholder from '../../src/components/Placeholder';
+
+import Placeholder from 'web-components/Placeholder';
+import Component from 'web-components/ConnectComponent';
 
 
-import Connect from '../../src/components/Connect/index';
-
-const antIcon = <Icon type="loading" style={{ fontSize: 24 }} spin />;
+const antIcon = (
+  <Icon
+    spin
+    type="loading"
+    style={{
+      fontSize: 24,
+    }}
+  />
+);
 
 const columns = [{
   title: 'Id',
@@ -48,7 +56,7 @@ const getColumns = (isLoading) => {
 
 storiesOf('data-table', module)
   .add('default-table', () => (
-    <Connect
+    <Component
       mapStateToProps={state => ({
         dataSource: getResourceNestedMappedList(
           'products',
@@ -63,16 +71,17 @@ storiesOf('data-table', module)
         )(state),
       })}
     >
-      { props => (
+      {props => (
         <Table
           rowKey="id"
           dataSource={props.dataSource}
           columns={getColumns(true)}
-        />)}
-    </Connect>
+        />
+      )}
+    </Component>
   ))
   .add('placeholder-table', () => (
-    <Connect
+    <Component
       mapStateToProps={state => ({
         dataSource: getResourceNestedMappedList(
           'products',
@@ -87,13 +96,14 @@ storiesOf('data-table', module)
         )(state),
       })}
     >
-      { props => (
+      {props => (
         <div>
           <Table
             rowKey="id"
             dataSource={props.dataSource}
             columns={getColumns(false)}
           />
-        </div>)}
-    </Connect>
+        </div>
+      )}
+    </Component>
   ));
