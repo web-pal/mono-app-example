@@ -18,31 +18,13 @@ const initialState: UiState = {
   selectedImage: {
     pixabay: {
       image: null,
-      index: null,
     },
     splashbase: {
       image: null,
-      index: null,
     },
   },
   error: null,
 };
-
-// simple universal ui reducer
-// export default ui = (
-//   state: UiState = initialState,
-//   action: Action,
-// ) => {
-//   switch (action.type) {
-//     case actionTypes.SET_UI_STATE:
-//       return {
-//         ...state,
-//         [action.payload.key]: action.payload.value,
-//       };
-//     default:
-//       return state;
-//   }
-// };
 
 const mergeUiValues = (
   values,
@@ -60,7 +42,7 @@ const mergeUiValues = (
   }), {})
 );
 
-// universal ui reducer, which can get deep into a state tree
+// universal ui reducer, which can set deep into a state tree
 const ui = (
   state: UiState = initialState,
   action: Action,

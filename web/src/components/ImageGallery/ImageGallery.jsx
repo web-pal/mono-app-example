@@ -19,7 +19,7 @@ type Props = {
   images: Array<string>,
   selectedImage: string,
   error: string,
-  selectImage: () => Action,
+  onSelectImage: () => Action,
 };
 
 const Gallery = ({
@@ -27,7 +27,7 @@ const Gallery = ({
   images,
   selectedImage,
   error,
-  selectImage,
+  onSelectImage,
 }: Props) => (
   <ImageGallery>
     <GalleryHeader>{name}</GalleryHeader>
@@ -35,11 +35,11 @@ const Gallery = ({
       <MainImage src={selectedImage} />
     </MainImageContainer>
     <ImageScroller>
-      {images.map((image, index) => (
-        <div key={index}>
+      {images.map(image => (
+        <div key={image}>
           <ScrollerImage
             src={image}
-            onClick={() => selectImage(image, index)}
+            onClick={() => onSelectImage(image)}
           />
         </div>
       ))}
