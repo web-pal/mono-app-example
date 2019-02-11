@@ -14,7 +14,8 @@ import store from '../src/store';
 
 function loadStories() {
   require('../stories/randomGenerateButton');
-  require('../stories/dataTable')
+  require('../stories/dataTable');
+  require('../stories/imageGallery');
   // You can require as many stories as you need.
 }
 

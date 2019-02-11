@@ -2,22 +2,27 @@ import React from 'react';
 import {
   storiesOf,
 } from '@storybook/react';
+import {
+  Table,
+  Icon,
+} from 'antd';
 
 import {
   getResourceNestedMappedList,
   variantsStringAttribute,
 } from 'core/selectors';
+import Placeholder from 'web-components/Placeholder';
+import Connect from 'web-components/Connect';
 
-import {
-  Table,
-  Icon,
-} from 'antd';
-import Placeholder from '../../src/components/Placeholder';
-
-
-import Connect from '../../src/components/Connect/index';
-
-const antIcon = <Icon type="loading" style={{ fontSize: 24 }} spin />;
+const antIcon = (
+  <Icon
+    spin
+    type="loading"
+    style={{
+      fontSize: 24,
+    }}
+  />
+);
 
 const columns = [{
   title: 'Id',

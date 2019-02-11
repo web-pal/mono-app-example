@@ -7,6 +7,9 @@ import {
 import * as uiSagas from './ui';
 import * as resourcesSagas from './resources';
 import initialize from './initialize';
+import {
+  initializeGallerySagas,
+} from './gallerySagas';
 
 
 export default function* rootSaga(): Generator<*, void, *> {
@@ -14,5 +17,6 @@ export default function* rootSaga(): Generator<*, void, *> {
     fork(uiSagas.listenGenerateRandomString),
     fork(resourcesSagas.listenFetchResourcesRequest),
     fork(initialize),
+    fork(initializeGallerySagas),
   ]);
 }
