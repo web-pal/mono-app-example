@@ -10,10 +10,9 @@ import {
 
 
 export function* generateRandomString(): Generator<*, void, *> {
-  yield put(uiActions.setUiState(
-    'randomString',
-    Math.random().toString(36).substring(7),
-  ));
+  yield put(uiActions.setUiState({
+    randomString: Math.random().toString(36).substring(7),
+  }));
 }
 
 export function* listenGenerateRandomString(): Generator<*, void, *> {

@@ -40,8 +40,6 @@ function* loadImages() {
       {
         pixabayImages,
         splashbaseImages,
-      }, {
-        deepMergeKeys: [],
       },
     ));
     yield put(uiActions.setUiState('selectedImage', {
@@ -51,9 +49,14 @@ function* loadImages() {
       splashbase: {
         image: splashbaseImages[0],
       },
-    }, { deepMergeKeys: [] }));
+    }));
   } catch (error) {
-    yield put(uiActions.setUiState('error', { error: 'Image Not Loaded' }, { deepMergeKeys: [] }));
+    yield put(uiActions.setUiState(
+      'error',
+      {
+        error: 'Image Not Loaded',
+      },
+    ));
   }
 }
 
@@ -94,7 +97,7 @@ function* watchForCarouselMove() {
             ]
           ),
         },
-      }, { deepMergeKeys: [] }));
+      }));
     }
   } finally {
     console.log('Carousel move terminated');

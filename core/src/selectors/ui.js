@@ -1,14 +1,17 @@
 // @flow
-import type {
-  State,
-  UiStateKey,
-} from '../types';
 
-
-export function getUiState<UK: UiStateKey>(
-  key: UK,
-): (State) => $ElementType<$PropertyType<State, 'ui'>, UK> {
-  return state => (
-    state.ui[key]
-  );
-}
+export const getUiState = (keyOrKeys: string | Array<string>) => (
+  ({ ui }: { ui: UiState }) => (
+    Array.isArray(keyOrKeys)
+      ? (
+        keyOrKeys.reduce(
+          (acc, key) => ({
+            ...acc,
+            [key]: ui[key],
+          }),
+          {},
+        )
+      )
+      : ui[keyOrKeys]
+  )
+);

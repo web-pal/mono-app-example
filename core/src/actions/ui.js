@@ -9,16 +9,14 @@ import {
 
 
 export const setUiState = (
-  key: string,
-  values: string | number,
-  meta: Object,
+  keyOrRootValues: any,
+  maybeValues: any,
 ): UiAction => ({
   type: actionTypes.SET_UI_STATE,
   payload: {
-    key,
-    values,
+    keyOrRootValues,
+    maybeValues,
   },
-  meta,
 });
 
 export const generateRandomString = (): UiAction => ({

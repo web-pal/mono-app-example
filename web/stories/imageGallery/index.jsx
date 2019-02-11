@@ -66,9 +66,6 @@ storiesOf('generate-random-button', module)
                         image,
                       },
                     },
-                    {
-                      deepMergeKeys: [],
-                    },
                   ),
                 )
               )}
@@ -88,9 +85,6 @@ storiesOf('generate-random-button', module)
                       splashbase: {
                         image,
                       },
-                    },
-                    {
-                      deepMergeKeys: [],
                     },
                   ),
                 )
