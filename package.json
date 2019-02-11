@@ -15,24 +15,24 @@
     "web"
   ],
   "devDependencies": {
-    "babel-eslint": "9.0.0",
-    "eslint": "5.5.0",
+    "babel-eslint": "10.0.1",
+    "eslint": "5.13.0",
     "eslint-config-airbnb": "17.1.0",
-    "eslint-import-resolver-webpack": "0.10.1",
-    "eslint-plugin-flowtype": "2.50.0",
-    "eslint-plugin-import": "2.14.0",
-    "eslint-plugin-jsx-a11y": "6.1.1",
-    "eslint-plugin-react": "7.11.1",
-    "flow-bin": "0.80.0",
+    "eslint-import-resolver-webpack": "0.11.0",
+    "eslint-plugin-flowtype": "3.2.1",
+    "eslint-plugin-import": "2.16.0",
+    "eslint-plugin-jsx-a11y": "6.2.1",
+    "eslint-plugin-react": "7.12.4",
+    "flow-bin": "0.92.1",
     "flow-typed": "2.5.1"
   },
   "dependencies": {
-    "ramda": "0.25.0",
-    "redux": "4.0.0",
+    "ramda": "0.26.1",
+    "redux": "4.0.1",
     "redux-resource": "3.0.4",
     "redux-resource-action-creators": "2.0.1",
     "redux-resource-plugins": "3.1.0",
-    "redux-saga": "0.16.0",
-    "reselect": "3.0.1"
+    "redux-saga": "1.0.1",
+    "reselect": "4.0.0"
   }
 }
