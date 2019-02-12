@@ -4,6 +4,7 @@ import React from 'react';
 import type {
   Node,
 } from 'react';
+
 import type {
   Action,
 } from 'core/types';
@@ -18,10 +19,7 @@ type Props = {
   generateRandomString: () => Action | void,
 };
 
-const ExampleComponent = ({
-  randomString,
-  generateRandomString,
-}: Props): Node => (
+const ExampleComponent = ({ randomString, generateRandomString }: Props): Node => (
   <div>
     <span>
       {randomString}

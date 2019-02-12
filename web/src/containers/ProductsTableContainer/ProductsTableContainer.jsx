@@ -35,14 +35,24 @@ const columns = [{
 
 type Props = {
   dataSource: Array<ProductResource>,
+  browserHistory: Object
 };
 
-const ProductsTableContainer = ({ dataSource }: Props) => (
-  <Table
-    rowKey="id"
-    dataSource={dataSource}
-    columns={columns}
-  />
+const ProductsTableContainer = ({ dataSource, browserHistory }: Props) => (
+  <div>
+    <Table
+      rowKey="id"
+      dataSource={dataSource}
+      columns={columns}
+    />
+    <button
+      type="button"
+      onClick={() => browserHistory.goBack()}
+    >
+      Go back
+    </button>
+  </div>
+
 );
 
 const mapStateToProps = (state: State) => ({

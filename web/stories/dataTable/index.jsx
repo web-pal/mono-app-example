@@ -73,7 +73,8 @@ storiesOf('data-table', module)
           rowKey="id"
           dataSource={props.dataSource}
           columns={getColumns(true)}
-        />)}
+        />
+      )}
     </Connect>
   ))
   .add('placeholder-table', () => (
@@ -99,6 +100,7 @@ storiesOf('data-table', module)
             dataSource={props.dataSource}
             columns={getColumns(false)}
           />
-        </div>)}
+        </div>
+      )}
     </Connect>
   ));

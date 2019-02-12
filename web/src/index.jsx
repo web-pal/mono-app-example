@@ -12,6 +12,10 @@ import type {
   ComponentType,
 } from 'react';
 
+import {
+  BrowserRouter,
+} from 'react-router-dom';
+
 import store from './store';
 import Base from './containers/Base';
 
@@ -21,7 +25,9 @@ const rootEl: HTMLElement = window.document.getElementById('root');
 const render: Function = (Component: ComponentType<*>) => (
   reactRender(
     <Provider store={store}>
-      <Component />
+      <BrowserRouter>
+        <Component />
+      </BrowserRouter>
     </Provider>,
     rootEl,
   )
