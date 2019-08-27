@@ -9,5 +9,5 @@
         "config": "./webpack.config.base.js"
       }
     }
-  },
+  }
 }
